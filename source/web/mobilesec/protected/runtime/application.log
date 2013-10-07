@@ -1,0 +1,887 @@
+2013/09/27 23:05:58 [error] [php] Undefined variable: time (/Applications/MAMP/htdocs/mobilesec/protected/views/message/helloWorld.php:7)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CController.php(869): MessageController->renderFile()
+#1 /Applications/MAMP/htdocs/yii/framework/web/CController.php(782): MessageController->renderPartial()
+#2 /Applications/MAMP/htdocs/mobilesec/protected/controllers/MessageController.php(7): MessageController->render()
+#3 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(49): MessageController->actionHelloWorld()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Applications/MAMP/htdocs/yii/framework/web/CController.php(286): MessageController->runAction()
+#6 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): MessageController->runActionWithFilters()
+#7 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): MessageController->run()
+#8 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/mobilesec/index.php(13): CWebApplication->run()
+REQUEST_URI=/mobilesec/index.php?r=message/helloworld
+in /Applications/MAMP/htdocs/mobilesec/protected/views/message/helloWorld.php (7)
+in /Applications/MAMP/htdocs/mobilesec/protected/controllers/MessageController.php (7)
+in /Applications/MAMP/htdocs/mobilesec/index.php (13)
+2013/10/01 22:43:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "people".' in /Applications/MAMP/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CController.php(270): CController->missingAction('people')
+#1 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('people')
+#2 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/people')
+#3 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/mobilesec/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobilesec/index.php?r=site/people
+HTTP_REFERER=http://localhost/mobilesec/index.php
+---
+2013/10/01 23:02:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "people".' in /Applications/MAMP/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CController.php(270): CController->missingAction('people')
+#1 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('people')
+#2 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/people')
+#3 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/mobilesec/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobilesec/index.php?r=site/people
+HTTP_REFERER=http://localhost/mobilesec/index.php?r=site/index
+---
+2013/10/01 23:02:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "projects".' in /Applications/MAMP/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CController.php(270): CController->missingAction('projects')
+#1 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('projects')
+#2 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/projects')
+#3 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/mobilesec/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobilesec/index.php?r=site/projects
+HTTP_REFERER=http://localhost/mobilesec/index.php?r=site/people
+---
+2013/10/01 23:02:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "publications".' in /Applications/MAMP/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CController.php(270): CController->missingAction('publications')
+#1 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('publications')
+#2 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/publicatio...')
+#3 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/mobilesec/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobilesec/index.php?r=site/publications
+HTTP_REFERER=http://localhost/mobilesec/index.php?r=site/projects
+---
+2013/10/01 23:02:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "tools".' in /Applications/MAMP/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CController.php(270): CController->missingAction('tools')
+#1 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('tools')
+#2 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/tools')
+#3 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/mobilesec/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobilesec/index.php?r=site/tools
+HTTP_REFERER=http://localhost/mobilesec/index.php?r=site/publications
+---
+2013/10/01 23:02:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "links".' in /Applications/MAMP/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CController.php(270): CController->missingAction('links')
+#1 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('links')
+#2 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/links')
+#3 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/mobilesec/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobilesec/index.php?r=site/links
+HTTP_REFERER=http://localhost/mobilesec/index.php?r=site/tools
+---
+2013/10/01 23:20:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "projects".' in /Applications/MAMP/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CController.php(270): CController->missingAction('projects')
+#1 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('projects')
+#2 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/projects')
+#3 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/mobilesec/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobilesec/index.php?r=site/projects
+HTTP_REFERER=http://localhost/mobilesec/index.php?r=site/index
+---
+2013/10/01 23:23:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "projects".' in /Applications/MAMP/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CController.php(270): CController->missingAction('projects')
+#1 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('projects')
+#2 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/projects')
+#3 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/mobilesec/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobilesec/index.php?r=site/projects
+HTTP_REFERER=http://localhost/mobilesec/index.php?r=site/index
+---
+2013/10/01 23:28:13 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "index".' in /Applications/MAMP/htdocs/yii/framework/web/CController.php:878
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CController.php(782): CController->renderPartial('index', NULL, true)
+#1 /Applications/MAMP/htdocs/mobilesec/protected/controllers/SiteController.php(32): CController->render('index')
+#2 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#3 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Applications/MAMP/htdocs/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('')
+#7 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#8 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /Applications/MAMP/htdocs/mobilesec/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/mobilesec/index.php
+---
+2013/10/01 23:29:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "people".' in /Applications/MAMP/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CController.php(270): CController->missingAction('people')
+#1 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('people')
+#2 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/people')
+#3 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/mobilesec/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobilesec/index.php?r=site/people
+HTTP_REFERER=http://localhost/mobilesec/index.php
+---
+2013/10/01 23:29:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "projects".' in /Applications/MAMP/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CController.php(270): CController->missingAction('projects')
+#1 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('projects')
+#2 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/projects')
+#3 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/mobilesec/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobilesec/index.php?r=site/projects
+HTTP_REFERER=http://localhost/mobilesec/index.php?r=site/people
+---
+2013/10/01 23:29:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "publications".' in /Applications/MAMP/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CController.php(270): CController->missingAction('publications')
+#1 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('publications')
+#2 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/publicatio...')
+#3 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/mobilesec/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobilesec/index.php?r=site/publications
+HTTP_REFERER=http://localhost/mobilesec/index.php?r=site/projects
+---
+2013/10/01 23:29:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "tools".' in /Applications/MAMP/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CController.php(270): CController->missingAction('tools')
+#1 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('tools')
+#2 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/tools')
+#3 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/mobilesec/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobilesec/index.php?r=site/tools
+HTTP_REFERER=http://localhost/mobilesec/index.php?r=site/publications
+---
+2013/10/01 23:29:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "people".' in /Applications/MAMP/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CController.php(270): CController->missingAction('people')
+#1 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('people')
+#2 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/people')
+#3 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/mobilesec/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobilesec/index.php?r=site/people
+HTTP_REFERER=http://localhost/mobilesec/index.php?r=site/tools
+---
+2013/10/01 23:39:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "people".' in /Applications/MAMP/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CController.php(270): CController->missingAction('people')
+#1 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('people')
+#2 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/people')
+#3 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/mobilesec/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobilesec/index.php?r=site/people
+HTTP_REFERER=http://localhost/mobilesec/index.php?r=site/tools
+---
+2013/10/01 23:40:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "publications".' in /Applications/MAMP/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CController.php(270): CController->missingAction('publications')
+#1 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('publications')
+#2 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/publicatio...')
+#3 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/mobilesec/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobilesec/index.php?r=site/publications
+HTTP_REFERER=http://localhost/mobilesec/index.php?r=site/index
+---
+2013/10/01 23:44:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "people".' in /Applications/MAMP/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CController.php(270): CController->missingAction('people')
+#1 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('people')
+#2 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/people')
+#3 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/mobilesec/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobilesec/index.php?r=site/people
+HTTP_REFERER=http://localhost/mobilesec/index.php?r=site/index
+---
+2013/10/01 23:44:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "projects".' in /Applications/MAMP/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CController.php(270): CController->missingAction('projects')
+#1 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('projects')
+#2 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/projects')
+#3 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/mobilesec/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobilesec/index.php?r=site/projects
+HTTP_REFERER=http://localhost/mobilesec/index.php?r=site/people
+---
+2013/10/01 23:44:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "projects".' in /Applications/MAMP/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CController.php(270): CController->missingAction('projects')
+#1 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('projects')
+#2 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/projects')
+#3 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/mobilesec/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobilesec/index.php?r=site/projects
+HTTP_REFERER=http://localhost/mobilesec/index.php?r=site/projects
+---
+2013/10/01 23:47:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "people".' in /Applications/MAMP/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CController.php(270): CController->missingAction('people')
+#1 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('people')
+#2 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/people')
+#3 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/mobilesec/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobilesec/index.php?r=site/people
+HTTP_REFERER=http://localhost/mobilesec/index.php?r=site/publications
+---
+2013/10/03 17:18:25 [error] [php] Missing argument 2 for YiiBase::t(), called in /Applications/MAMP/htdocs/mobilesec/protected/views/layouts/main.php on line 63 and defined (/Applications/MAMP/htdocs/yii/framework/YiiBase.php:577)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#1 /Applications/MAMP/htdocs/yii/framework/web/widgets/CContentDecorator.php(76): SiteController->renderFile()
+#2 /Applications/MAMP/htdocs/yii/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate()
+#3 /Applications/MAMP/htdocs/yii/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(206): CContentDecorator->run()
+#5 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(300): SiteController->endWidget()
+#6 /Applications/MAMP/htdocs/mobilesec/protected/views/layouts/column1.php(6): SiteController->endContent()
+#7 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require()
+#8 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#9 /Applications/MAMP/htdocs/yii/framework/web/CController.php(784): SiteController->renderFile()
+#10 /Applications/MAMP/htdocs/mobilesec/protected/controllers/SiteController.php(32): SiteController->render()
+#11 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#12 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#13 /Applications/MAMP/htdocs/yii/framework/web/CController.php(286): SiteController->runAction()
+#14 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#15 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): SiteController->run()
+#16 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#17 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#18 /Applications/MAMP/htdocs/mobilesec/index.php(13): CWebApplication->run()
+REQUEST_URI=/mobilesec/index.php
+in /Applications/MAMP/htdocs/mobilesec/protected/views/layouts/main.php (63)
+in /Applications/MAMP/htdocs/mobilesec/protected/views/layouts/column1.php (6)
+in /Applications/MAMP/htdocs/mobilesec/protected/controllers/SiteController.php (32)
+2013/10/03 17:28:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "tools".' in /Applications/MAMP/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CController.php(270): CController->missingAction('tools')
+#1 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('tools')
+#2 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/tools')
+#3 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/mobilesec/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobilesec/index.php?r=site/tools
+HTTP_REFERER=http://localhost/mobilesec/index.php?r=site/publications
+---
+2013/10/03 17:32:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "people".' in /Applications/MAMP/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CController.php(270): CController->missingAction('people')
+#1 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('people')
+#2 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/people')
+#3 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/mobilesec/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobilesec/index.php?r=site/people
+HTTP_REFERER=http://localhost/mobilesec/index.php?r=site/page&view=about
+---
+2013/10/03 17:54:09 [error] [exception.CException] exception 'CException' with message 'SiteController and its behaviors do not have a method or closure named "layout".' in /Applications/MAMP/htdocs/yii/framework/base/CComponent.php:266
+Stack trace:
+#0 /Applications/MAMP/htdocs/mobilesec/protected/controllers/SiteController.php(119): CComponent->__call('layout', Array)
+#1 /Applications/MAMP/htdocs/mobilesec/protected/controllers/SiteController.php(119): SiteController->layout('column2')
+#2 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionPublications()
+#3 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Applications/MAMP/htdocs/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('publications')
+#7 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/publicatio...')
+#8 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /Applications/MAMP/htdocs/mobilesec/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/mobilesec/index.php?r=site/publications
+HTTP_REFERER=http://localhost/mobilesec/index.php?r=site/projects
+---
+2013/10/03 17:59:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "people".' in /Applications/MAMP/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CController.php(270): CController->missingAction('people')
+#1 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('people')
+#2 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/people')
+#3 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/mobilesec/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobilesec/index.php?r=site/people
+HTTP_REFERER=http://localhost/mobilesec/index.php?r=site/index
+---
+2013/10/03 18:02:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "people".' in /Applications/MAMP/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CController.php(270): CController->missingAction('people')
+#1 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('people')
+#2 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/people')
+#3 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/mobilesec/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobilesec/index.php?r=site/people
+HTTP_REFERER=http://localhost/mobilesec/index.php?r=site/index
+---
+2013/10/03 18:02:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "people".' in /Applications/MAMP/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CController.php(270): CController->missingAction('people')
+#1 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('people')
+#2 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/people')
+#3 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/mobilesec/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobilesec/index.php?r=site/people
+HTTP_REFERER=http://localhost/mobilesec/index.php?r=site/index
+---
+2013/10/03 21:33:43 [error] [php] Undefined variable: model (/Applications/MAMP/htdocs/mobilesec/protected/views/layouts/main.php:38)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/widgets/CContentDecorator.php(76): SiteController->renderFile()
+#1 /Applications/MAMP/htdocs/yii/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate()
+#2 /Applications/MAMP/htdocs/yii/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput()
+#3 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(206): CContentDecorator->run()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(300): SiteController->endWidget()
+#5 /Applications/MAMP/htdocs/mobilesec/protected/views/layouts/column2.php(22): SiteController->endContent()
+#6 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require()
+#7 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#8 /Applications/MAMP/htdocs/yii/framework/web/CController.php(784): SiteController->renderFile()
+#9 /Applications/MAMP/htdocs/mobilesec/protected/controllers/SiteController.php(121): SiteController->render()
+#10 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionPublications()
+#11 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#12 /Applications/MAMP/htdocs/yii/framework/web/CController.php(286): SiteController->runAction()
+#13 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#14 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): SiteController->run()
+#15 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /Applications/MAMP/htdocs/mobilesec/index.php(13): CWebApplication->run()
+REQUEST_URI=/mobilesec/index.php?r=site/publications
+in /Applications/MAMP/htdocs/mobilesec/protected/views/layouts/main.php (38)
+in /Applications/MAMP/htdocs/mobilesec/protected/views/layouts/column2.php (22)
+in /Applications/MAMP/htdocs/mobilesec/protected/controllers/SiteController.php (121)
+2013/10/03 21:39:38 [error] [php] Undefined variable: model (/Applications/MAMP/htdocs/mobilesec/protected/views/layouts/main.php:38)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/widgets/CContentDecorator.php(76): SiteController->renderFile()
+#1 /Applications/MAMP/htdocs/yii/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate()
+#2 /Applications/MAMP/htdocs/yii/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput()
+#3 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(206): CContentDecorator->run()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(300): SiteController->endWidget()
+#5 /Applications/MAMP/htdocs/mobilesec/protected/views/layouts/column2.php(22): SiteController->endContent()
+#6 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require()
+#7 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#8 /Applications/MAMP/htdocs/yii/framework/web/CController.php(784): SiteController->renderFile()
+#9 /Applications/MAMP/htdocs/mobilesec/protected/controllers/SiteController.php(123): SiteController->render()
+#10 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionPublications()
+#11 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#12 /Applications/MAMP/htdocs/yii/framework/web/CController.php(286): SiteController->runAction()
+#13 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#14 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): SiteController->run()
+#15 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /Applications/MAMP/htdocs/mobilesec/index.php(13): CWebApplication->run()
+REQUEST_URI=/mobilesec/index.php?r=site/publications
+in /Applications/MAMP/htdocs/mobilesec/protected/views/layouts/main.php (38)
+in /Applications/MAMP/htdocs/mobilesec/protected/views/layouts/column2.php (22)
+in /Applications/MAMP/htdocs/mobilesec/protected/controllers/SiteController.php (123)
+2013/10/03 21:44:14 [error] [php] Undefined variable: model (/Applications/MAMP/htdocs/mobilesec/protected/views/layouts/main.php:38)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/widgets/CContentDecorator.php(76): SiteController->renderFile()
+#1 /Applications/MAMP/htdocs/yii/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate()
+#2 /Applications/MAMP/htdocs/yii/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput()
+#3 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(206): CContentDecorator->run()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(300): SiteController->endWidget()
+#5 /Applications/MAMP/htdocs/mobilesec/protected/views/layouts/column2.php(22): SiteController->endContent()
+#6 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require()
+#7 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#8 /Applications/MAMP/htdocs/yii/framework/web/CController.php(784): SiteController->renderFile()
+#9 /Applications/MAMP/htdocs/mobilesec/protected/controllers/SiteController.php(121): SiteController->render()
+#10 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionPublications()
+#11 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#12 /Applications/MAMP/htdocs/yii/framework/web/CController.php(286): SiteController->runAction()
+#13 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#14 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): SiteController->run()
+#15 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /Applications/MAMP/htdocs/mobilesec/index.php(13): CWebApplication->run()
+REQUEST_URI=/mobilesec/index.php?r=site/publications
+in /Applications/MAMP/htdocs/mobilesec/protected/views/layouts/main.php (38)
+in /Applications/MAMP/htdocs/mobilesec/protected/views/layouts/column2.php (22)
+in /Applications/MAMP/htdocs/mobilesec/protected/controllers/SiteController.php (121)
+2013/10/03 21:44:26 [error] [php] Undefined variable: CHtml (/Applications/MAMP/htdocs/mobilesec/protected/views/layouts/main.php:39)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/widgets/CContentDecorator.php(76): SiteController->renderFile()
+#1 /Applications/MAMP/htdocs/yii/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate()
+#2 /Applications/MAMP/htdocs/yii/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput()
+#3 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(206): CContentDecorator->run()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(300): SiteController->endWidget()
+#5 /Applications/MAMP/htdocs/mobilesec/protected/views/layouts/column2.php(22): SiteController->endContent()
+#6 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require()
+#7 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#8 /Applications/MAMP/htdocs/yii/framework/web/CController.php(784): SiteController->renderFile()
+#9 /Applications/MAMP/htdocs/mobilesec/protected/controllers/SiteController.php(121): SiteController->render()
+#10 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionPublications()
+#11 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#12 /Applications/MAMP/htdocs/yii/framework/web/CController.php(286): SiteController->runAction()
+#13 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#14 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): SiteController->run()
+#15 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /Applications/MAMP/htdocs/mobilesec/index.php(13): CWebApplication->run()
+REQUEST_URI=/mobilesec/index.php?r=site/publications
+in /Applications/MAMP/htdocs/mobilesec/protected/views/layouts/main.php (39)
+in /Applications/MAMP/htdocs/mobilesec/protected/views/layouts/column2.php (22)
+in /Applications/MAMP/htdocs/mobilesec/protected/controllers/SiteController.php (121)
+2013/10/03 21:44:48 [error] [php] Undefined variable: txtsearch (/Applications/MAMP/htdocs/mobilesec/protected/views/layouts/main.php:39)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/widgets/CContentDecorator.php(76): SiteController->renderFile()
+#1 /Applications/MAMP/htdocs/yii/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate()
+#2 /Applications/MAMP/htdocs/yii/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput()
+#3 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(206): CContentDecorator->run()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(300): SiteController->endWidget()
+#5 /Applications/MAMP/htdocs/mobilesec/protected/views/layouts/column2.php(22): SiteController->endContent()
+#6 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require()
+#7 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#8 /Applications/MAMP/htdocs/yii/framework/web/CController.php(784): SiteController->renderFile()
+#9 /Applications/MAMP/htdocs/mobilesec/protected/controllers/SiteController.php(121): SiteController->render()
+#10 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionPublications()
+#11 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#12 /Applications/MAMP/htdocs/yii/framework/web/CController.php(286): SiteController->runAction()
+#13 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#14 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): SiteController->run()
+#15 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /Applications/MAMP/htdocs/mobilesec/index.php(13): CWebApplication->run()
+REQUEST_URI=/mobilesec/index.php?r=site/publications
+in /Applications/MAMP/htdocs/mobilesec/protected/views/layouts/main.php (39)
+in /Applications/MAMP/htdocs/mobilesec/protected/views/layouts/column2.php (22)
+in /Applications/MAMP/htdocs/mobilesec/protected/controllers/SiteController.php (121)
+2013/10/03 21:46:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "people".' in /Applications/MAMP/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CController.php(270): CController->missingAction('people')
+#1 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('people')
+#2 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/people')
+#3 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/mobilesec/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobilesec/index.php?r=site/people
+HTTP_REFERER=http://localhost/mobilesec/index.php?r=site/index
+---
+2013/10/03 21:46:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "people".' in /Applications/MAMP/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CController.php(270): CController->missingAction('people')
+#1 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('people')
+#2 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/people')
+#3 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/mobilesec/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobilesec/index.php?r=site/people
+HTTP_REFERER=http://localhost/mobilesec/index.php?r=site/publications
+---
+2013/10/03 21:52:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "people".' in /Applications/MAMP/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CController.php(270): CController->missingAction('people')
+#1 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('people')
+#2 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/people')
+#3 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/mobilesec/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobilesec/index.php?r=site/people
+HTTP_REFERER=http://localhost/mobilesec/index.php?r=site/publications
+---
+2013/10/03 22:03:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "people".' in /Applications/MAMP/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CController.php(270): CController->missingAction('people')
+#1 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('people')
+#2 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/people')
+#3 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/mobilesec/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobilesec/index.php?r=site/people
+HTTP_REFERER=http://localhost/mobilesec/index.php?r=site/publications
+---
+2013/10/03 22:05:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "people".' in /Applications/MAMP/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CController.php(270): CController->missingAction('people')
+#1 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('people')
+#2 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/people')
+#3 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/mobilesec/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobilesec/index.php?r=site/people
+HTTP_REFERER=http://localhost/mobilesec/index.php?r=site/publications
+---
+2013/10/03 22:05:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "people".' in /Applications/MAMP/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CController.php(270): CController->missingAction('people')
+#1 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('people')
+#2 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/people')
+#3 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/mobilesec/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobilesec/index.php?r=site/people
+HTTP_REFERER=http://localhost/mobilesec/index.php?r=site/publications
+---
+2013/10/03 22:05:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "people".' in /Applications/MAMP/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CController.php(270): CController->missingAction('people')
+#1 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('people')
+#2 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/people')
+#3 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/mobilesec/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobilesec/index.php?r=site/people
+HTTP_REFERER=http://localhost/mobilesec/index.php?r=site/publications
+---
+2013/10/04 16:34:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "people".' in /Applications/MAMP/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CController.php(270): CController->missingAction('people')
+#1 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('people')
+#2 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/people')
+#3 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/mobilesec/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobilesec/index.php?r=site/people
+HTTP_REFERER=http://localhost/mobilesec/index.php?r=site/index
+---
+2013/10/04 16:37:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "people".' in /Applications/MAMP/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CController.php(270): CController->missingAction('people')
+#1 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('people')
+#2 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/people')
+#3 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/mobilesec/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobilesec/index.php?r=site/people
+HTTP_REFERER=http://localhost/mobilesec/
+---
+2013/10/04 16:45:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "people".' in /Applications/MAMP/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CController.php(270): CController->missingAction('people')
+#1 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('people')
+#2 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/people')
+#3 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/mobilesec/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobilesec/index.php?r=site/people
+HTTP_REFERER=http://localhost/mobilesec/index.php?r=site/contact
+---
+2013/10/04 17:26:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "people".' in /Applications/MAMP/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CController.php(270): CController->missingAction('people')
+#1 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('people')
+#2 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/people')
+#3 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/mobilesec/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobilesec/index.php?r=site/people
+HTTP_REFERER=http://localhost/mobilesec/index.php?r=site/index
+---
+2013/10/04 17:26:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "people".' in /Applications/MAMP/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CController.php(270): CController->missingAction('people')
+#1 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('people')
+#2 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/people')
+#3 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/mobilesec/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobilesec/index.php?r=site/people
+HTTP_REFERER=http://localhost/mobilesec/index.php?r=site/people
+---
+2013/10/04 17:30:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "people".' in /Applications/MAMP/htdocs/yii/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CController.php(270): CController->missingAction('people')
+#1 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('people')
+#2 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/people')
+#3 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/mobilesec/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/mobilesec/index.php?r=site/people
+HTTP_REFERER=http://localhost/mobilesec/index.php
+---
+2013/10/06 04:16:23 [error] [php] Undefined variable: model (/Applications/MAMP/htdocs/mobilesec/protected/views/layouts/main.php:45)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/widgets/CContentDecorator.php(76): SiteController->renderFile()
+#1 /Applications/MAMP/htdocs/yii/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate()
+#2 /Applications/MAMP/htdocs/yii/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput()
+#3 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(206): CContentDecorator->run()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(300): SiteController->endWidget()
+#5 /Applications/MAMP/htdocs/mobilesec/protected/views/layouts/column2.php(22): SiteController->endContent()
+#6 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require()
+#7 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#8 /Applications/MAMP/htdocs/yii/framework/web/CController.php(784): SiteController->renderFile()
+#9 /Applications/MAMP/htdocs/mobilesec/protected/controllers/SiteController.php(99): SiteController->render()
+#10 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#11 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#12 /Applications/MAMP/htdocs/yii/framework/web/CController.php(286): SiteController->runAction()
+#13 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#14 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): SiteController->run()
+#15 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /Applications/MAMP/htdocs/mobilesec/index.php(13): CWebApplication->run()
+REQUEST_URI=/mobilesec/index.php?r=site/login
+in /Applications/MAMP/htdocs/mobilesec/protected/views/layouts/main.php (45)
+in /Applications/MAMP/htdocs/mobilesec/protected/views/layouts/column2.php (22)
+in /Applications/MAMP/htdocs/mobilesec/protected/controllers/SiteController.php (99)
+2013/10/06 04:18:11 [error] [php] Undefined variable: model (/Applications/MAMP/htdocs/mobilesec/protected/views/layouts/main.php:45)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/widgets/CContentDecorator.php(76): SiteController->renderFile()
+#1 /Applications/MAMP/htdocs/yii/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate()
+#2 /Applications/MAMP/htdocs/yii/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput()
+#3 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(206): CContentDecorator->run()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(300): SiteController->endWidget()
+#5 /Applications/MAMP/htdocs/mobilesec/protected/views/layouts/column2.php(22): SiteController->endContent()
+#6 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require()
+#7 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#8 /Applications/MAMP/htdocs/yii/framework/web/CController.php(784): SiteController->renderFile()
+#9 /Applications/MAMP/htdocs/mobilesec/protected/controllers/SiteController.php(119): SiteController->render()
+#10 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#11 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#12 /Applications/MAMP/htdocs/yii/framework/web/CController.php(286): SiteController->runAction()
+#13 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#14 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): SiteController->run()
+#15 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /Applications/MAMP/htdocs/mobilesec/index.php(13): CWebApplication->run()
+REQUEST_URI=/mobilesec/index.php?r=site/login
+in /Applications/MAMP/htdocs/mobilesec/protected/views/layouts/main.php (45)
+in /Applications/MAMP/htdocs/mobilesec/protected/views/layouts/column2.php (22)
+in /Applications/MAMP/htdocs/mobilesec/protected/controllers/SiteController.php (119)
+2013/10/06 04:18:16 [error] [php] Undefined variable: model (/Applications/MAMP/htdocs/mobilesec/protected/views/layouts/main.php:45)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/widgets/CContentDecorator.php(76): SiteController->renderFile()
+#1 /Applications/MAMP/htdocs/yii/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate()
+#2 /Applications/MAMP/htdocs/yii/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput()
+#3 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(206): CContentDecorator->run()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(300): SiteController->endWidget()
+#5 /Applications/MAMP/htdocs/mobilesec/protected/views/layouts/column2.php(22): SiteController->endContent()
+#6 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require()
+#7 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#8 /Applications/MAMP/htdocs/yii/framework/web/CController.php(784): SiteController->renderFile()
+#9 /Applications/MAMP/htdocs/mobilesec/protected/controllers/SiteController.php(49): SiteController->render()
+#10 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#11 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#12 /Applications/MAMP/htdocs/yii/framework/web/CController.php(286): SiteController->runAction()
+#13 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#14 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): SiteController->run()
+#15 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /Applications/MAMP/htdocs/mobilesec/index.php(13): CWebApplication->run()
+REQUEST_URI=/mobilesec/index.php
+in /Applications/MAMP/htdocs/mobilesec/protected/views/layouts/main.php (45)
+in /Applications/MAMP/htdocs/mobilesec/protected/views/layouts/column2.php (22)
+in /Applications/MAMP/htdocs/mobilesec/protected/controllers/SiteController.php (49)
+2013/10/06 04:19:58 [error] [php] Undefined variable: model (/Applications/MAMP/htdocs/mobilesec/protected/views/layouts/main.php:45)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/widgets/CContentDecorator.php(76): SiteController->renderFile()
+#1 /Applications/MAMP/htdocs/yii/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate()
+#2 /Applications/MAMP/htdocs/yii/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput()
+#3 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(206): CContentDecorator->run()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(300): SiteController->endWidget()
+#5 /Applications/MAMP/htdocs/mobilesec/protected/views/layouts/column2.php(22): SiteController->endContent()
+#6 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require()
+#7 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#8 /Applications/MAMP/htdocs/yii/framework/web/CController.php(784): SiteController->renderFile()
+#9 /Applications/MAMP/htdocs/mobilesec/protected/controllers/SiteController.php(49): SiteController->render()
+#10 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#11 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#12 /Applications/MAMP/htdocs/yii/framework/web/CController.php(286): SiteController->runAction()
+#13 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#14 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): SiteController->run()
+#15 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /Applications/MAMP/htdocs/mobilesec/index.php(13): CWebApplication->run()
+REQUEST_URI=/mobilesec/index.php
+in /Applications/MAMP/htdocs/mobilesec/protected/views/layouts/main.php (45)
+in /Applications/MAMP/htdocs/mobilesec/protected/views/layouts/column2.php (22)
+in /Applications/MAMP/htdocs/mobilesec/protected/controllers/SiteController.php (49)
+2013/10/06 04:20:45 [error] [php] Undefined variable: model (/Applications/MAMP/htdocs/mobilesec/protected/views/layouts/main.php:45)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/widgets/CContentDecorator.php(76): SiteController->renderFile()
+#1 /Applications/MAMP/htdocs/yii/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate()
+#2 /Applications/MAMP/htdocs/yii/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput()
+#3 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(206): CContentDecorator->run()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(300): SiteController->endWidget()
+#5 /Applications/MAMP/htdocs/mobilesec/protected/views/layouts/column2.php(22): SiteController->endContent()
+#6 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require()
+#7 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#8 /Applications/MAMP/htdocs/yii/framework/web/CController.php(784): SiteController->renderFile()
+#9 /Applications/MAMP/htdocs/mobilesec/protected/controllers/SiteController.php(49): SiteController->render()
+#10 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#11 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#12 /Applications/MAMP/htdocs/yii/framework/web/CController.php(286): SiteController->runAction()
+#13 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#14 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): SiteController->run()
+#15 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /Applications/MAMP/htdocs/mobilesec/index.php(13): CWebApplication->run()
+REQUEST_URI=/mobilesec/index.php
+in /Applications/MAMP/htdocs/mobilesec/protected/views/layouts/main.php (45)
+in /Applications/MAMP/htdocs/mobilesec/protected/views/layouts/column2.php (22)
+in /Applications/MAMP/htdocs/mobilesec/protected/controllers/SiteController.php (49)
+2013/10/06 04:22:52 [error] [php] Undefined variable: model (/Applications/MAMP/htdocs/mobilesec/protected/views/layouts/main.php:45)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/widgets/CContentDecorator.php(76): SiteController->renderFile()
+#1 /Applications/MAMP/htdocs/yii/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate()
+#2 /Applications/MAMP/htdocs/yii/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput()
+#3 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(206): CContentDecorator->run()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(300): SiteController->endWidget()
+#5 /Applications/MAMP/htdocs/mobilesec/protected/views/layouts/column2.php(22): SiteController->endContent()
+#6 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require()
+#7 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#8 /Applications/MAMP/htdocs/yii/framework/web/CController.php(784): SiteController->renderFile()
+#9 /Applications/MAMP/htdocs/mobilesec/protected/controllers/SiteController.php(49): SiteController->render()
+#10 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#11 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#12 /Applications/MAMP/htdocs/yii/framework/web/CController.php(286): SiteController->runAction()
+#13 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#14 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): SiteController->run()
+#15 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /Applications/MAMP/htdocs/mobilesec/index.php(13): CWebApplication->run()
+REQUEST_URI=/mobilesec/index.php
+in /Applications/MAMP/htdocs/mobilesec/protected/views/layouts/main.php (45)
+in /Applications/MAMP/htdocs/mobilesec/protected/views/layouts/column2.php (22)
+in /Applications/MAMP/htdocs/mobilesec/protected/controllers/SiteController.php (49)
+2013/10/06 04:27:42 [error] [php] Undefined variable: model (/Applications/MAMP/htdocs/mobilesec/protected/views/layouts/main.php:45)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/widgets/CContentDecorator.php(76): SiteController->renderFile()
+#1 /Applications/MAMP/htdocs/yii/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate()
+#2 /Applications/MAMP/htdocs/yii/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput()
+#3 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(206): CContentDecorator->run()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(300): SiteController->endWidget()
+#5 /Applications/MAMP/htdocs/mobilesec/protected/views/layouts/column2.php(22): SiteController->endContent()
+#6 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require()
+#7 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#8 /Applications/MAMP/htdocs/yii/framework/web/CController.php(784): SiteController->renderFile()
+#9 /Applications/MAMP/htdocs/mobilesec/protected/controllers/SiteController.php(50): SiteController->render()
+#10 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#11 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#12 /Applications/MAMP/htdocs/yii/framework/web/CController.php(286): SiteController->runAction()
+#13 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#14 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): SiteController->run()
+#15 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /Applications/MAMP/htdocs/mobilesec/index.php(13): CWebApplication->run()
+REQUEST_URI=/mobilesec/index.php
+in /Applications/MAMP/htdocs/mobilesec/protected/views/layouts/main.php (45)
+in /Applications/MAMP/htdocs/mobilesec/protected/views/layouts/column2.php (22)
+in /Applications/MAMP/htdocs/mobilesec/protected/controllers/SiteController.php (50)
+2013/10/06 18:19:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii".' in /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('gii')
+#1 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/mobilesec/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/mobilesec/index.php?r=gii
+---
+2013/10/06 20:15:50 [error] [php] Undefined variable: model (/Applications/MAMP/htdocs/mobilesec/protected/views/site/register.php:20)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CController.php(869): SiteController->renderFile()
+#1 /Applications/MAMP/htdocs/yii/framework/web/CController.php(782): SiteController->renderPartial()
+#2 /Applications/MAMP/htdocs/mobilesec/protected/controllers/SiteController.php(186): SiteController->render()
+#3 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionRegister()
+#4 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Applications/MAMP/htdocs/yii/framework/web/CController.php(286): SiteController->runAction()
+#6 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#7 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): SiteController->run()
+#8 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/mobilesec/index.php(13): CWebApplication->run()
+REQUEST_URI=/mobilesec/index.php?r=site/register
+in /Applications/MAMP/htdocs/mobilesec/protected/views/site/register.php (20)
+in /Applications/MAMP/htdocs/mobilesec/protected/controllers/SiteController.php (186)
+in /Applications/MAMP/htdocs/mobilesec/index.php (13)
+2013/10/06 20:19:51 [error] [php] include(password.php): failed to open stream: No such file or directory (/Applications/MAMP/htdocs/yii/framework/YiiBase.php:427)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/validators/CValidator.php(186): import()
+#1 /Applications/MAMP/htdocs/yii/framework/base/CModel.php(287): createValidator()
+#2 /Applications/MAMP/htdocs/yii/framework/base/CModel.php(260): Login->createValidators()
+#3 /Applications/MAMP/htdocs/yii/framework/base/CModel.php(304): Login->getValidators()
+#4 /Applications/MAMP/htdocs/yii/framework/web/helpers/CHtml.php(1414): Login->isAttributeRequired()
+#5 /Applications/MAMP/htdocs/yii/framework/web/widgets/CActiveForm.php(597): activeLabelEx()
+#6 /Applications/MAMP/htdocs/mobilesec/protected/views/site/register.php(23): CActiveForm->labelEx()
+#7 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require()
+#8 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#9 /Applications/MAMP/htdocs/yii/framework/web/CController.php(869): SiteController->renderFile()
+#10 /Applications/MAMP/htdocs/yii/framework/web/CController.php(782): SiteController->renderPartial()
+#11 /Applications/MAMP/htdocs/mobilesec/protected/controllers/SiteController.php(187): SiteController->render()
+#12 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionRegister()
+#13 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#14 /Applications/MAMP/htdocs/yii/framework/web/CController.php(286): SiteController->runAction()
+#15 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#16 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): SiteController->run()
+#17 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#18 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#19 /Applications/MAMP/htdocs/mobilesec/index.php(13): CWebApplication->run()
+REQUEST_URI=/mobilesec/index.php?r=site/register
+in /Applications/MAMP/htdocs/mobilesec/protected/views/site/register.php (23)
+in /Applications/MAMP/htdocs/mobilesec/protected/controllers/SiteController.php (187)
+in /Applications/MAMP/htdocs/mobilesec/index.php (13)
+2013/10/06 20:21:24 [error] [exception.CException] exception 'CException' with message 'Login has an invalid validation rule. The rule must specify attributes to be validated and the validator name.' in /Applications/MAMP/htdocs/yii/framework/base/CModel.php:289
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/base/CModel.php(260): CModel->createValidators()
+#1 /Applications/MAMP/htdocs/yii/framework/base/CModel.php(304): CModel->getValidators('email')
+#2 /Applications/MAMP/htdocs/yii/framework/web/helpers/CHtml.php(1414): CModel->isAttributeRequired('email')
+#3 /Applications/MAMP/htdocs/yii/framework/web/widgets/CActiveForm.php(597): CHtml::activeLabelEx(Object(Login), 'email', Array)
+#4 /Applications/MAMP/htdocs/mobilesec/protected/views/site/register.php(23): CActiveForm->labelEx(Object(Login), 'email')
+#5 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require('/Applications/M...')
+#6 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Applications/M...', Array, true)
+#7 /Applications/MAMP/htdocs/yii/framework/web/CController.php(869): CBaseController->renderFile('/Applications/M...', Array, true)
+#8 /Applications/MAMP/htdocs/yii/framework/web/CController.php(782): CController->renderPartial('register', Array, true)
+#9 /Applications/MAMP/htdocs/mobilesec/protected/controllers/SiteController.php(187): CController->render('register', Array)
+#10 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionRegister()
+#11 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#12 /Applications/MAMP/htdocs/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#13 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): CController->run('register')
+#15 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/register')
+#16 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /Applications/MAMP/htdocs/mobilesec/index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/mobilesec/index.php?r=site/register
+HTTP_REFERER=http://localhost/mobilesec/
+---
+2013/10/06 20:22:00 [error] [php] include(size.php): failed to open stream: No such file or directory (/Applications/MAMP/htdocs/yii/framework/YiiBase.php:427)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/validators/CValidator.php(186): import()
+#1 /Applications/MAMP/htdocs/yii/framework/base/CModel.php(287): createValidator()
+#2 /Applications/MAMP/htdocs/yii/framework/base/CModel.php(260): Login->createValidators()
+#3 /Applications/MAMP/htdocs/yii/framework/base/CModel.php(304): Login->getValidators()
+#4 /Applications/MAMP/htdocs/yii/framework/web/helpers/CHtml.php(1414): Login->isAttributeRequired()
+#5 /Applications/MAMP/htdocs/yii/framework/web/widgets/CActiveForm.php(597): activeLabelEx()
+#6 /Applications/MAMP/htdocs/mobilesec/protected/views/site/register.php(23): CActiveForm->labelEx()
+#7 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(126): require()
+#8 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#9 /Applications/MAMP/htdocs/yii/framework/web/CController.php(869): SiteController->renderFile()
+#10 /Applications/MAMP/htdocs/yii/framework/web/CController.php(782): SiteController->renderPartial()
+#11 /Applications/MAMP/htdocs/mobilesec/protected/controllers/SiteController.php(187): SiteController->render()
+#12 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionRegister()
+#13 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#14 /Applications/MAMP/htdocs/yii/framework/web/CController.php(286): SiteController->runAction()
+#15 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#16 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): SiteController->run()
+#17 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#18 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#19 /Applications/MAMP/htdocs/mobilesec/index.php(13): CWebApplication->run()
+REQUEST_URI=/mobilesec/index.php?r=site/register
+in /Applications/MAMP/htdocs/mobilesec/protected/views/site/register.php (23)
+in /Applications/MAMP/htdocs/mobilesec/protected/controllers/SiteController.php (187)
+in /Applications/MAMP/htdocs/mobilesec/index.php (13)
+2013/10/06 20:36:38 [error] [php] Missing argument 2 for CHtml::label(), called in /Applications/MAMP/htdocs/mobilesec/protected/views/site/register.php on line 71 and defined (/Applications/MAMP/htdocs/yii/framework/web/helpers/CHtml.php:562)
+Stack trace:
+#0 /Applications/MAMP/htdocs/yii/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#1 /Applications/MAMP/htdocs/yii/framework/web/CController.php(869): SiteController->renderFile()
+#2 /Applications/MAMP/htdocs/yii/framework/web/CController.php(782): SiteController->renderPartial()
+#3 /Applications/MAMP/htdocs/mobilesec/protected/controllers/SiteController.php(187): SiteController->render()
+#4 /Applications/MAMP/htdocs/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionRegister()
+#5 /Applications/MAMP/htdocs/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#6 /Applications/MAMP/htdocs/yii/framework/web/CController.php(286): SiteController->runAction()
+#7 /Applications/MAMP/htdocs/yii/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#8 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(282): SiteController->run()
+#9 /Applications/MAMP/htdocs/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /Applications/MAMP/htdocs/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Applications/MAMP/htdocs/mobilesec/index.php(13): CWebApplication->run()
+REQUEST_URI=/mobilesec/index.php?r=site/register
+in /Applications/MAMP/htdocs/mobilesec/protected/views/site/register.php (71)
+in /Applications/MAMP/htdocs/mobilesec/protected/controllers/SiteController.php (187)
+in /Applications/MAMP/htdocs/mobilesec/index.php (13)
