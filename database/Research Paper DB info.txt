@@ -1,0 +1,25 @@
+Research Paper DB : 
+tPaper table
+    id							: #id
+    file_name					: fileName
+	title						: title
+	author						: author
+	year						: year
+	conference_publisher		: conferencePublisher
+	abstract					: abstract
+	category 					: idCat
+	target_problem_category 	: idTargetProblemCat
+	target_problem_detail		: tarProbDetail
+	proposed_solution_category	: idPropSolCat
+	proposed_solution_detail	: propSolDetail
+	related_work				: relWork
+	pros 						: pros
+	cons 						: cons
+	performance					: performance
+	other						: other
+	bibTex						: bibTex
+	file_url					: fileUrl
+	createDate					: createDate
+
+table : tCategory(#idCat,Category,Description)
+table : tConferencePub(#idConfPub, pubName, pubShortName, Description) or tConferencePub(#idConfPub, pubName, pubShortName, pubPIC, pubAdd1, pubAdd2, pubCity, pubZipCode, pubState, pubCountry, pubPhone1, pubPhone2, pubFax1, pubFax2, pubEmail1, pubEmail2)
