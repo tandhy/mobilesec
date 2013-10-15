@@ -1,0 +1,38 @@
+How to install go-pear.phar in osx:
+http://pear.php.net/manual/en/installation.getting.php
+$ wget http://pear.php.net/go-pear.phar
+$ sudo php -d detect_unicode=0 go-pear.phar
+
+how to install phpunit in osx :
+http://kubyshkin.ru/posts/phpunit-on-mac-os-x-snow-leopard-10-6.html
+
+sudo pear channel-discover pear.phpunit.de
+sudo pear channel-discover components.ez.no
+sudo pear channel-discover pear.symfony-project.com
+sudo pear channel-discover pear.symfony.com
+sudo pear install phpunit/PHPUnit
+
+download selenium server :
+http://selenium.googlecode.com/files/selenium-server-standalone-2.35.0.jar
+run the server for testing: java -jar selenium-server-standalone-2.35.0.jar
+
+make sure to install phpunit_selenium:
+http://phpunit.de/manual/3.7/en/selenium.html
+pear install phpunit/PHPUnit_Selenium
+
+if phpunit no respond or no result, try to enable the following:
+http://stackoverflow.com/questions/7458644/phpunit-does-nothing-no-errors-no-output
+display_errors = On
+display_startup_errors = On
+Please not that this has to go into /Applications/MAMP/bin/php/php5.x.x/conf/php.ini
+
+if any problem with PHP_Invoker :
+went to pear.phpunit.de
+manually downloaded PHP_Invoker utility class
+unzipped the file on my daughter's mac (I'm running Windows)
+put the "Invoker" directory under C:\xampp\php\pear\PHP
+put the "Invoker.php" file under C:\xampp\php\pear\PHP
+
+for browser firefox problem :
+add the following to PATH:
+/Applications/Internet-Networking/Firefox.app/Contents/MacOS/
