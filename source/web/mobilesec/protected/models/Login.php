@@ -15,7 +15,6 @@
  * @property string $mobile
  * @property string $role
  * @property string $regDate
- * @property string $actCode
  * @property integer $accStatus
  * @property string $lastLogin
  */
@@ -40,19 +39,23 @@ class Login extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('email, password, fName, lName, institution, area, mobile, role, regDate, actCode, lastLogin', 'required'),
+			array('email, password, verifyPassword, fName, lName, institution, area, mobile', 'required'),
 			array('accStatus', 'numerical', 'integerOnly'=>true),
 			array('email, password, verifyPassword', 'length', 'max'=>100),
 			//array('email','size', 'max'=>50),
-			array('fName, mName, lName, phone, mobile, actCode', 'length', 'max'=>50),
+			array('fName, mName, lName, phone, mobile', 'length', 'max'=>50),
 			array('institution, area', 'length', 'max'=>200),
 			array('role', 'length', 'max'=>20),
 			array('email','email'), // make sure email is a valid email
+			array('verifyPassword', 'compare', 'compareAttribute'=>'password'), // compare password and verify password
+			array('email, password, fName, mName, lName, institution, area, phone, mobile, role, regDate, accStatus, lastLogin', 'safe'),
 			//array('password','password'),
 			//array('email','filter','strtolower'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('email, password, fName, mName, lName, institution, area, phone, mobile, role, regDate, actCode, accStatus, lastLogin', 'safe', 'on'=>'search'),
+			
+			array('email, password, fName, mName, lName, institution, area, phone, mobile, role, regDate, accStatus, lastLogin', 'safe', 'on'=>'search'),
+			array('email, password, fName, mName, lName, institution, area, phone, mobile, role, regDate, accStatus, lastLogin', 'safe', 'on'=>'getNewUsers'),
 		);
 	}
 
@@ -75,17 +78,17 @@ class Login extends CActiveRecord
 		return array(
 			'email' => 'Email',
 			'password' => 'Password',
+			'verifyPassword' => 'Verify Password',
 			'fName' => 'First Name',
 			'mName' => 'Middle Name',
 			'lName' => 'Last Name',
 			'institution' => 'Institution',
 			'area' => 'Area',
-			'phone' => 'Phone',
-			'mobile' => 'Mobile',
+			'phone' => 'Phone Number',
+			'mobile' => 'Mobile Number',
 			'role' => 'Role',
-			'regDate' => 'Reg Date',
-			'actCode' => 'Act Code',
-			'accStatus' => 'Acc Status',
+			'regDate' => 'Register Date',
+			'accStatus' => 'Account Status',
 			'lastLogin' => 'Last Login',
 		);
 	}
@@ -119,9 +122,24 @@ class Login extends CActiveRecord
 		$criteria->compare('mobile',$this->mobile,true);
 		$criteria->compare('role',$this->role,true);
 		$criteria->compare('regDate',$this->regDate,true);
-		$criteria->compare('actCode',$this->actCode,true);
 		$criteria->compare('accStatus',$this->accStatus);
 		$criteria->compare('lastLogin',$this->lastLogin,true);
+
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+		));
+	}
+	
+	/*
+	 * Retrieve list of Users where account Status is 0
+	 * @author tandhy
+	 */
+	public function getNewUsers()
+	{
+		$criteria=new CDbCriteria;
+
+		$criteria->compare('accStatus','0', true);
+		$criteria->compare('role','user',true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -137,5 +155,54 @@ class Login extends CActiveRecord
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
+	}
+	
+	public function beforeSave()
+	{
+		//if
+		$this->regDate = date("Y-m-d");
+		$this->lastLogin = date("Y-m-d");
+		$this->accStatus = 0;
+		$this->role = "user";
+		
+		// hash password with md5
+		$pass = md5($this->password);
+		$this->password = $pass;
+		return true;
+	}
+	
+	/*
+	 * Function to send email notification to admin, notify a user registration
+	 * @author tandhy
+	 */
+	public function sendRegistrationNotificationToAdmin()
+	{		
+		$contentMsg = "
+			There is a User registration with the following information :<br>
+			Email       : ".$this->email."<br>
+			First Name	: ".$this->fName."<br>
+			Middle Name : ".$this->mName."<br>
+			Last Name   : ".$this->lName."<br>
+			Institution : ".$this->institution."<br>
+			Area of Interest : ".$this->area."<br><br>
+			
+			Please take a moment to approve.
+			
+			------
+			This email is auto-generated when a user register in the web.
+			
+		";
+		$message = new YiiMailMessage;
+		$message->setBody($contentMsg, 'text/html');
+		$message->subject = 'New User Registration';
+		$message->addTo(Yii::app()->params['adminEmail']);
+		$message->from = Yii::app()->params['adminEmail'];
+		Yii::app()->mail->send($message);
+	}
+	
+	public function afterSave()
+	{
+		$this->sendRegistrationNotificationToAdmin();
+		return true;
 	}
 }

@@ -16,6 +16,7 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
+		 'ext.yii-mail.YiiMailMessage',
 	),
 
 	'modules'=>array(
@@ -59,6 +60,8 @@ return array(
 			'username' => 'root',
 			'password' => 'root',
 			'charset' => 'utf8',
+			'enableProfiling'=>true,
+			'enableParamLogging'=>true,
 		),
 		
 		'errorHandler'=>array(
@@ -70,16 +73,33 @@ return array(
 			'routes'=>array(
 				array(
 					'class'=>'CFileLogRoute',
-					'levels'=>'error, warning',
+					'levels'=>'error, warning, trace, info',
 				),
 				// uncomment the following to show log messages on web pages
-				/*
-				array(
+				
+				/*array(
 					'class'=>'CWebLogRoute',
+					'levels'=>'error, warning, trace, info',
 				),
-				*/
+				array(
+					'class'=>'CProfileLogRoute',
+					'levels'=>'profile',
+					'enabled'=>true,
+		        ),				
+    			array(
+                'class'=>'ext.yii-debug-toolbar.YiiDebugToolbarRoute',
+                'ipFilters'=>array('127.0.0.1','192.168.1.215'),
+	            ),*/
 			),
 		),
+		// mail extension function
+		'mail' => array(
+			'class' => 'ext.yii-mail.YiiMail',
+			'transportType' => 'php',
+			'viewPath' => 'application.views.mail',
+			'logging' => true,
+			'dryRun' => false
+ 		),
 	),
 
 	// application-level parameters that can be accessed

@@ -21,6 +21,34 @@ class SiteController extends Controller
 			),
 		);
 	}
+	
+	/**
+	 * Function name : processLoginForm
+	 * Author		 : tandhy
+	 * Date			 : 10.16.13
+	 * Purpose		 : render and catch LoginForm request to view
+	 */
+	public function processLoginForm()
+	{
+		$model=new LoginForm;
+
+		// if it is ajax validation request
+		if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
+		{
+			echo CActiveForm::validate($model);
+			Yii::app()->end();
+		}
+		
+		// collect user input data
+		if(isset($_POST['LoginForm']))
+		{
+			/*echo "<script language=javascript>alert('".$model->username."');</script>";*/
+			$model->attributes=$_POST['LoginForm'];
+			// validate user input and redirect to the previous page if valid
+			if($model->validate() && $model->login())
+				$this->redirect(Yii::app()->user->returnUrl);
+		}
+	}	
 
 	/**
 	 * This is the default 'index' action that is invoked
@@ -28,30 +56,32 @@ class SiteController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$model=new Login;
+		$model=new LoginForm;
 
 		// if it is ajax validation request
-		/*if(isset($_POST['ajax']) && $_POST['ajax']==='frmlogin')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
-
+		
 		// collect user input data
 		if(isset($_POST['LoginForm']))
 		{
+			/*echo "<script language=javascript>alert('".$model->username."');</script>";*/
 			$model->attributes=$_POST['LoginForm'];
 			// validate user input and redirect to the previous page if valid
 			if($model->validate() && $model->login())
 				$this->redirect(Yii::app()->user->returnUrl);
 		}
 		// display the login form
-		*/
-		$this->render('index',array('model'=>$model));
+		//$this->render('login',array('model'=>$model));
 		
+		//$this->render('index',array('model'=>$model));
+
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-		//$this->render('index');
+		$this->render('index');
 	}
 
 	/**
@@ -114,7 +144,9 @@ class SiteController extends Controller
 			$model->attributes=$_POST['LoginForm'];
 			// validate user input and redirect to the previous page if valid
 			if($model->validate() && $model->login())
+			{
 				$this->redirect(Yii::app()->user->returnUrl);
+			}
 		}
 		// display the login form
 		$this->render('login',array('model'=>$model));
@@ -137,9 +169,10 @@ class SiteController extends Controller
 	 */
 	 public function actionPublications()
 	 {
-	 	 //$this->layout = 'column2';
-		 // set the public layout in component/controller.php
-		 $this->render('publications');
+	 	$this->processLoginForm();
+	 	//$this->layout = 'column2';
+		// set the public layout in component/controller.php
+		$this->render('publications');
 	 }
 
 	/**
@@ -150,6 +183,7 @@ class SiteController extends Controller
 	 */
 	 public function actionProjects()
 	 {
+	 	$this->processLoginForm();
 		 $this->render('projects');
 	 }
 
@@ -161,6 +195,7 @@ class SiteController extends Controller
 	 */
 	 public function actionTools()
 	 {
+	 	$this->processLoginForm();
 		 $this->render('tools');
 	 }
 
@@ -172,6 +207,7 @@ class SiteController extends Controller
 	 */
 	 public function actionLinks()
 	 {
+	 	$this->processLoginForm();
 		 $this->render('links');
 	 }
 	 
@@ -179,12 +215,79 @@ class SiteController extends Controller
 	 * author 	: tandhy
 	 * date		: 10.03.13
 	 * purpose	:
-	 *	open links page
+	 *	open Register page
 	 */
 	 public function actionRegister()
 	 {
 	 	$model = new Login;
-		$this->render('register', array('model'=>$model));
+		$resetForm = 0;
+	 	// check for the register function
+
+		// if it is ajax validation request
+		if(isset($_POST['ajax']) && $_POST['ajax']==='login-register-form')
+		{
+			echo CActiveForm::validate($model);
+			Yii::app()->end();
+		}
+		
+		// collect user input data
+		if(isset($_POST['Login']))
+		{
+			// assign regDate and lastLogin to current Date
+			//$model = new Login;
+			$model->attributes=$_POST['Login'];
+			/*$msg = $model->email." | ".$model->fName." | ".$model->mName." | ".$model->lName." | ";
+			$msg.= $model->institution." | ".$model->area." | ".$model->phone." | ".$model->mobile." | ";
+			$msg.= $model->password." | ".$model->role." | ".$model->regDate." | ".$model->lastLogin." | ";
+			$msg.= $model->accStatus;
+			echo "<script language=javascript>alert('".$msg."');</script>";*/
+			if($model->save())
+			{
+				/*echo "<script language=javascript>alert('Saved');</script>";*/
+				$resetForm = 1;
+				// send email notification to admin via email
+				
+			}
+			else
+			{
+				$resetForm = 0;
+			}
+		}
+
+		$this->processLoginForm();
+		if(Yii::app()->user->isGuest) 
+		{
+			//$model = new Login;
+			//$model->unsetAttributes();
+			$this->render('register', array('model'=>$model));
+			/*if($resetForm==1)
+			{
+				$resetForm = 0;
+				$form.reset('login-register-form').trigger('reset');
+			}*/
+		} 
+		else 
+		{
+			$this->render('index');
+		}
+
+		/*
+		if(isset($_POST['LoginForm']))
+		{
+			//echo "<script language=javascript>alert('".$model->username."');</script>";
+			$model->attributes=$_POST['LoginForm'];
+			// validate user input and redirect to the previous page if valid
+			if($model->validate() && $model->login())
+				$this->redirect(Yii::app()->user->returnUrl);
+		}
+		if(isset($_POST['Login']))
+		{
+			$model->attributes=$_POST['Login'];
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->email));
+		}
+		*/
+	 
 	 }
 
 }
