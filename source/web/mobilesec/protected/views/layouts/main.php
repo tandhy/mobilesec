@@ -19,9 +19,9 @@
 </head>
 
 <body>
-
 <div class="container" id="page">
 	<div id="header">
+    <div id="header-content">
     <!-- divide header with 2 column, span-19:750px; and span-5 last for the remaining -->
 		<!-- <div id="logo"> -->
     <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -30,21 +30,30 @@
         <img src="images/mobsec_logo_sml.png" />
         </td>
         <td width="300" align="right" valign="bottom" id="header-login-txt">
-			<?php $form=$this->beginWidget('CActiveForm', array(
-                'id'=>'frmlogin',
+        <div id="tblLogin" style="visibility:<?php echo (Yii::app()->user->isGuest) ? "visible" : "hidden" ; ?>;">
+			<?php 
+			$model = new LoginForm;
+			$form=$this->beginWidget('CActiveForm', array(
+                'id'=>'login-form',
+				//'action'=>'index.php',
                 'enableClientValidation'=>true,
                 'clientOptions'=>array(
                     'validateOnSubmit'=>true,
                 ),
             )); ?>
-        <!-- <form id="frmlogin" name="frmlogin" action="" method="post"> -->
-        <?php echo CHtml::label('Username','luser'); ?>&nbsp;
-        <input type="text" name="txtuser" id="txtuser" class="header-login-txtbox"/>&nbsp;
-		<?php echo CHtml::label('Password','lpwd'); ?>&nbsp;
-        <input type="password" name="txtpwd" id="txtpwd" class="header-login-txtbox" />&nbsp;
-        <input type="submit" name="cmdlogin" id="cmdlogin" class="header-login-btn" value="LOGIN" />
-        <!-- </form> -->
+
+        <?php //echo $form->label($model,'username');?>&nbsp;
+        <?php echo $form->textField($model,'username',array('class'=>'header-login-txtbox','placeholder'=>'email address')); ?>
+		<?php //echo $form->label($model,'password'); ?>&nbsp;
+        <?php echo $form->passwordField($model,'password',array('class'=>'header-login-txtbox','placeholder'=>'password')); ?>&nbsp;
+        <?php echo CHtml::submitButton('Login',array('class'=>'header-login-btn')); ?>
         <?php $this->endWidget(); ?>
+        <?php if(Yii::app()->user->hasFlash('validationError')):?>
+    			<div class="info">
+        		<?php echo Yii::app()->user->getFlash('validationError'); ?>
+    			</div>
+		<?php endif; ?>
+        </div>
         </td>
         </tr>
     </table>
@@ -55,65 +64,44 @@
             <?php //echo "Department of Computer Science";?>
             </div>
         </div> <!-- logo end -->
-
-	    <!-- adding search form : start 
-        	 author : tandhy / 10.03.13
-             purpose : add search form in header area
-        -->
-        <?php
-			/*$form = $this->beginWidget('CActiveForm',array(
-				'id'=>'search-form',				// form id
-				'enableAjaxValidation'=>true,
-				'enableClientValidation'=>true,
-				//'focus'=>array($model,'firstName'),
-			));
-		*/
-		 ?>
-         <?php //echo CHtml::textField('txtsearch','',array('size'=>10,'maxlength'=>20)); ?>
-         <?php //echo CHtml::submitButton('Search'); ?>
-         <?php //$this->endWidget(); ?>
-        <!-- adding search form : end -->
-
+	</div><!-- header content -->
 	</div><!-- header -->
 
 
 	<div id="mainmenu">
-	<?php 
+    <div id="mainmenu-content">
+	<?php
+		
 		$this->widget('zii.widgets.CMenu',array(
-			//'activeCssClass'=>'active',
-			//'activateParents' => TRUE,
+			'encodeLabel'=>false,
+			'activeCssClass'=>'active',
+			'activateParents' => TRUE,
 			'items'=>array(
-				array('label'=>'Home', 'url'=>array('/site/index')),
+				array('label'=>'Home', 'url'=>(Yii::app()->user->isGuest ? array('/site/index') : array('login/index'))),
 				array('label'=>'People', 'url'=>array('/site/people')),
-				/*array(
-					'label'=>'People', 
-					'url'=>array('/site/people'),
-					'linkOptions' => array('id'=>'menuPeople'), // tag id <a id='menuPeople'></a>
-					'itemOptions' => array('id'=>'itemPeople'),
-					//sub menu
-					'items'=>array(
-						array('label'=>'Faculty','url'=>'site/faculty'),
-						array('label'=>'Student','url'=>'site/student'),
-						array('label'=>'Collaboration','url'=>'site/collaboration'),
-					),
-				),*/
 				array('label'=>'Projects', 'url'=>array('/site/projects')),
 				array('label'=>'Publications', 'url'=>array('site/publications')),
 				array('label'=>'Tools', 'url'=>array('/site/tools')),
 				array('label'=>'Links', 'url'=>array('/site/links')),
-				array('label'=>'Register', 'url'=>array('/site/register')),
-				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+				array('label'=>'Registration', 'url'=>array('/site/register'),'visible'=>Yii::app()->user->isGuest),
+				// the login menu available to admin only
+				array('label'=>'Manage Users', 'url'=>array('/login/manage'), 'visible' => (!Yii::app()->user->isGuest && Yii::app()->user->roles=="admin" ? 1 : 0)),
+				//array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
 			),
 		));
+				
 	?>
+	</div><!-- mainmenu content -->
 	</div><!-- mainmenu -->
-
+	
+    <div id="breadcrumbs-content">
 	<?php if(isset($this->breadcrumbs)):?>
 		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
 			'links'=>$this->breadcrumbs,
-		)); ?><!-- breadcrumbs -->
+		)); ?><!-- breadcrumbs-content -->
 	<?php endif?>
+	</div><!-- breadcrumbs -->
 
 	<?php echo $content; ?>
 
@@ -121,10 +109,11 @@
 
 	<div id="footer">
     	<?php
-			$this->widget('zii.widgets.CMenu', array(
+			// menu in footer
+			/*$this->widget('zii.widgets.CMenu', array(
 			'items'=>$this->menu,
 			'htmlOptions'=>array('class'=>'operations'),
-		));
+		));*/
 		?>
 		Copyright &copy; <?php echo date('Y'); ?> by Mobile Security Research Lab.<br/>
 		All Rights Reserved.<br/>
