@@ -7,9 +7,12 @@
  * @property integer $idCategory
  * @property string $Category
  * @property string $Description
+<<<<<<< HEAD
  *
  * The followings are the available model relations:
  * @property Paper[] $papers
+=======
+>>>>>>> iter1
  */
 class Category extends CActiveRecord
 {
@@ -31,7 +34,12 @@ class Category extends CActiveRecord
 		return array(
 			array('idCategory, Category, Description', 'required'),
 			array('idCategory', 'numerical', 'integerOnly'=>true),
+<<<<<<< HEAD
 			array('Category, Description', 'length', 'max'=>255),
+=======
+			array('Category', 'length', 'max'=>50),
+			array('Description', 'length', 'max'=>255),
+>>>>>>> iter1
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('idCategory, Category, Description', 'safe', 'on'=>'search'),
@@ -46,7 +54,10 @@ class Category extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+<<<<<<< HEAD
 			'papers' => array(self::HAS_MANY, 'Paper', 'idCat'),
+=======
+>>>>>>> iter1
 		);
 	}
 
@@ -99,6 +110,7 @@ class Category extends CActiveRecord
 	{
 		return parent::model($className);
 	}
+<<<<<<< HEAD
 
 	/*
 	*	get all category from DB, and passed it to combobox
@@ -115,4 +127,6 @@ class Category extends CActiveRecord
 		}
 		return $result;
 	}
+=======
+>>>>>>> iter1
 }

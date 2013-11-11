@@ -32,8 +32,12 @@
 
 .grid-view table.items th a
 {
+<<<<<<< HEAD
 	//color: #EEE;
 	color: #FFFFFF;
+=======
+	color: #EEE;
+>>>>>>> iter1
 	font-weight: bold;
 	text-decoration: none;
 }
@@ -62,8 +66,12 @@
 
 .grid-view table.items tr.odd
 {
+<<<<<<< HEAD
 	//background: #E5F1F4;
 	background: #dcfeed;
+=======
+	background: #E5F1F4;
+>>>>>>> iter1
 }
 
 .grid-view table.items tr.selected

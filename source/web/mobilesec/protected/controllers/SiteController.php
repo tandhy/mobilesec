@@ -42,6 +42,7 @@ class SiteController extends Controller
 		// collect user input data
 		if(isset($_POST['LoginForm']))
 		{
+<<<<<<< HEAD
 			$model->attributes=$_POST['LoginForm'];
 			// validate user input and redirect to the previous page if valid
 			if($model->validate() && $model->authenticate())
@@ -51,6 +52,13 @@ class SiteController extends Controller
 				$this->redirect(Yii::app()->user->returnUrl);
 			}
 				
+=======
+			/*echo "<script language=javascript>alert('".$model->username."');</script>";*/
+			$model->attributes=$_POST['LoginForm'];
+			// validate user input and redirect to the previous page if valid
+			if($model->validate() && $model->login())
+				$this->redirect(Yii::app()->user->returnUrl);
+>>>>>>> iter1
 		}
 	}	
 
@@ -61,8 +69,11 @@ class SiteController extends Controller
 	public function actionIndex()
 	{
 		$model=new LoginForm;
+<<<<<<< HEAD
 		//$this->layout = 'column2';
 		if(!Yii::app()->user->isGuest) $this->layout = 'column2';
+=======
+>>>>>>> iter1
 
 		// if it is ajax validation request
 		if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
@@ -176,8 +187,12 @@ class SiteController extends Controller
 			// validate user input and redirect to the previous page if valid
 			if($model->validate() && $model->login())
 			{
+<<<<<<< HEAD
 				$this->render('index');
 				//$this->redirect(Yii::app()->user->returnUrl);
+=======
+				$this->redirect(Yii::app()->user->returnUrl);
+>>>>>>> iter1
 			}
 		}
 		// display the login form
@@ -205,6 +220,7 @@ class SiteController extends Controller
 	 	//$this->layout = 'column2';
 		// set the public layout in component/controller.php
 		$this->render('publications');
+<<<<<<< HEAD
 	 }
 
 	/**
@@ -218,6 +234,8 @@ class SiteController extends Controller
 	 	$this->processLoginForm();
 		//$this->layout = 'column1';
 		 $this->render('people');
+=======
+>>>>>>> iter1
 	 }
 
 	/**
@@ -281,7 +299,15 @@ class SiteController extends Controller
 			// assign regDate and lastLogin to current Date
 			//$model = new Login;
 			$model->attributes=$_POST['Login'];
+<<<<<<< HEAD
 			/*echo "<script language=javascript>alert('".$msg."');</script>";*/
+=======
+			/*$msg = $model->email." | ".$model->fName." | ".$model->mName." | ".$model->lName." | ";
+			$msg.= $model->institution." | ".$model->area." | ".$model->phone." | ".$model->mobile." | ";
+			$msg.= $model->password." | ".$model->role." | ".$model->regDate." | ".$model->lastLogin." | ";
+			$msg.= $model->accStatus;
+			echo "<script language=javascript>alert('".$msg."');</script>";*/
+>>>>>>> iter1
 			if($model->save())
 			{
 				/*echo "<script language=javascript>alert('Saved');</script>";*/

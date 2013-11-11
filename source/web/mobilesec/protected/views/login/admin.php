@@ -7,6 +7,15 @@ $this->breadcrumbs=array(
 	'Manage',
 );
 
+<<<<<<< HEAD
+=======
+$this->menu=array(
+	array('label'=>'List Users', 'url'=>array('index')),
+	array('label'=>'Create Users', 'url'=>array('create')),
+	array('label'=>'Need to Approve', 'url'=>array('approve')),
+);
+
+>>>>>>> iter1
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
 	$('.search-form').toggle();

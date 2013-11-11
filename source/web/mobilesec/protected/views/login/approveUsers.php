@@ -7,6 +7,14 @@ $this->breadcrumbs=array(
 	'Approve Users',
 );
 
+<<<<<<< HEAD
+=======
+$this->menu=array(
+	array('label'=>'List Users', 'url'=>array('index')),
+	array('label'=>'Create Users', 'url'=>array('create')),
+);
+
+>>>>>>> iter1
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
 	$('.search-form').toggle();
@@ -37,6 +45,10 @@ $('.search-form form').submit(function(){
 	'columns'=>array(
 		'email',
 		'fName',
+<<<<<<< HEAD
+=======
+		'mName',
+>>>>>>> iter1
 		'lName',
 		'institution',
 		/*'accStatus',
@@ -50,6 +62,7 @@ $('.search-form form').submit(function(){
 		*/
 		array(
 			'class'=>'CButtonColumn',
+<<<<<<< HEAD
 			'template'=>'{view} {approve}',
 			'buttons'=>array(
 				'approve'=> array(
@@ -66,6 +79,8 @@ $('.search-form form').submit(function(){
 					//'url'=>Yii::app()->createUrl('/faq/index/', array('email' => $model->email)),
 				),
 			),
+=======
+>>>>>>> iter1
 		),
 	),
 )); ?>

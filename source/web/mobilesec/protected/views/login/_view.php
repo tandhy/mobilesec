@@ -9,6 +9,13 @@
 	<?php echo CHtml::link(CHtml::encode($data->email), array('view', 'id'=>$data->email)); ?>
 	<br />
 
+<<<<<<< HEAD
+=======
+	<b><?php echo CHtml::encode($data->getAttributeLabel('password')); ?>:</b>
+	<?php echo CHtml::encode($data->password); ?>
+	<br />
+
+>>>>>>> iter1
 	<b><?php echo CHtml::encode($data->getAttributeLabel('fName')); ?>:</b>
 	<?php echo CHtml::encode($data->fName); ?>
 	<br />

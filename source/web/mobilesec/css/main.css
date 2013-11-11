@@ -315,9 +315,13 @@ div.search-form
 
 .operations li a:hover
 {
+<<<<<<< HEAD
 	//background: #80CFFF;
 	background: #06e475;
 	color:#FFFFFF;
+=======
+	background: #80CFFF;
+>>>>>>> iter1
 }
 
 .register-submit-btn {
@@ -331,6 +335,7 @@ div.search-form
 	height: 30px;
 }
 
+<<<<<<< HEAD
 .update-submit-btn {
 	border : solid 1px #999999;
 	background: #00CC66;
@@ -342,6 +347,8 @@ div.search-form
 	height: 30px;
 }
 
+=======
+>>>>>>> iter1
 .register-reset-btn {
 	border : solid 1px #999999;
 	background: #FF0000;
@@ -353,6 +360,7 @@ div.search-form
 	height: 30px;
 }
 
+<<<<<<< HEAD
 .reset-btn {
 	border : solid 1px #999999;
 	background: #FF0000;
@@ -375,3 +383,5 @@ div.search-form
 	height: 30px;
 }
 
+=======
+>>>>>>> iter1

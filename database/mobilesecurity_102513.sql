@@ -3,7 +3,11 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
+<<<<<<< HEAD
 -- Generation Time: Oct 25, 2013 at 08:33 PM
+=======
+-- Generation Time: Oct 25, 2013 at 08:31 PM
+>>>>>>> iter1
 -- Server version: 5.5.25
 -- PHP Version: 5.4.4
 

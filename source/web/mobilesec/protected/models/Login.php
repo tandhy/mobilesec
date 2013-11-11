@@ -145,6 +145,7 @@ class Login extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+<<<<<<< HEAD
 
 	/*
 	 * Retrieve list of Approved Users only -> accStatus = 1
@@ -161,6 +162,8 @@ class Login extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+=======
+>>>>>>> iter1
 
 	/**
 	 * Returns the static model of the specified AR class.
@@ -175,6 +178,7 @@ class Login extends CActiveRecord
 	
 	public function beforeSave()
 	{
+<<<<<<< HEAD
 		if($this->isNewRecord)
 		{
 			$this->regDate = date("Y-m-d");
@@ -186,6 +190,17 @@ class Login extends CActiveRecord
 			$pass = md5($this->password);
 			$this->password = $pass;
 		}
+=======
+		//if
+		$this->regDate = date("Y-m-d");
+		$this->lastLogin = date("Y-m-d");
+		$this->accStatus = 0;
+		$this->role = "user";
+		
+		// hash password with md5
+		$pass = md5($this->password);
+		$this->password = $pass;
+>>>>>>> iter1
 		return true;
 	}
 	
@@ -204,9 +219,15 @@ class Login extends CActiveRecord
 			Institution : ".$this->institution."<br>
 			Area of Interest : ".$this->area."<br><br>
 			
+<<<<<<< HEAD
 			Please take a moment to approve.<br><br>
 			
 			------<br>
+=======
+			Please take a moment to approve.
+			
+			------
+>>>>>>> iter1
 			This email is auto-generated when a user register in the web.
 			
 		";
@@ -218,6 +239,7 @@ class Login extends CActiveRecord
 		Yii::app()->mail->send($message);
 	}
 	
+<<<<<<< HEAD
 	/*
 	 * Function to send email notification to admin, after save model return true
 	 * @author tandhy
@@ -260,6 +282,11 @@ class Login extends CActiveRecord
 		$message->addTo($userRegistered->email);
 		$message->from = Yii::app()->params['adminEmail'];
 		Yii::app()->mail->send($message);
+=======
+	public function afterSave()
+	{
+		$this->sendRegistrationNotificationToAdmin();
+>>>>>>> iter1
 		return true;
 	}
 }

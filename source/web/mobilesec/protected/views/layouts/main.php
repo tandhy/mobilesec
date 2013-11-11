@@ -42,6 +42,7 @@
                 ),
             )); ?>
 
+<<<<<<< HEAD
         <?php //echo $form->label($model,'username');?>&nbsp;
         <?php echo $form->textField($model,'username',array('class'=>'header-login-txtbox','placeholder'=>'email address')); ?>
 		<?php //echo $form->label($model,'password'); ?>&nbsp;
@@ -53,6 +54,14 @@
         		<?php echo Yii::app()->user->getFlash('validationError'); ?>
     			</div>
 		<?php endif; ?>
+=======
+        <?php echo $form->label($model,'username');?>&nbsp;
+        <?php echo $form->textField($model,'username',array('class'=>'header-login-txtbox','placeholder'=>'username')); ?>
+		<?php echo $form->label($model,'password'); ?>&nbsp;
+        <?php echo $form->passwordField($model,'password',array('class'=>'header-login-txtbox','placeholder'=>'password')); ?>&nbsp;
+        <?php echo CHtml::submitButton('Login',array('class'=>'header-login-btn')); ?>
+        <?php $this->endWidget(); ?>
+>>>>>>> iter1
         </div>
         </td>
         </tr>
@@ -77,15 +86,42 @@
 			'activeCssClass'=>'active',
 			'activateParents' => TRUE,
 			'items'=>array(
+<<<<<<< HEAD
 				array('label'=>'Home', 'url'=>(Yii::app()->user->isGuest ? array('/site/index') : array('login/index'))),
 				array('label'=>'People', 'url'=>array('/site/people')),
+=======
+				array('label'=>'Home', 'url'=>array('/site/index')),
+				//array('label'=>'People', 'url'=>array('/site/people')),
+				array(
+					'label'=>'People', 
+					//'url'=>array('/site/people'),
+					//'linkOptions' => array('id'=>'menuPeople'), // tag id <a id='menuPeople'></a>
+					//'itemOptions' => array('id'=>'itemPeople'),
+				'url'=>'#', 
+				'linkOptions '=> array('class'=>'dropdown-toggle', 'data-toggle'=>'dropdown'),
+				'itemOptions '=> array('class'=>'dropdown'),
+				'submenuOptions '=> array('class'=>'dropdown-menu'),
+					//sub menu
+					/*'items'=>array(
+						array('label'=>'Faculty','url'=>array('/site/faculty')),
+						array('label'=>'Students','url'=>array('/site/students')),
+						array('label'=>'Collaborations','url'=>array('/site/collaborations')),
+					),*/
+				),
+>>>>>>> iter1
 				array('label'=>'Projects', 'url'=>array('/site/projects')),
 				array('label'=>'Publications', 'url'=>array('site/publications')),
 				array('label'=>'Tools', 'url'=>array('/site/tools')),
 				array('label'=>'Links', 'url'=>array('/site/links')),
+<<<<<<< HEAD
 				array('label'=>'Registration', 'url'=>array('/site/register'),'visible'=>Yii::app()->user->isGuest),
 				// the login menu available to admin only
 				array('label'=>'Manage Users', 'url'=>array('/login/manage'), 'visible' => (!Yii::app()->user->isGuest && Yii::app()->user->roles=="admin" ? 1 : 0)),
+=======
+				array('label'=>'Register', 'url'=>array('/site/register'),'visible'=>Yii::app()->user->isGuest),
+				// the login menu available to admin only
+				array('label'=>'User Mgt', 'url'=>array('/login/index'), 'visible' => (!Yii::app()->user->isGuest && strtolower(Yii::app()->user->name)=='admin' ? 1 : 0)),
+>>>>>>> iter1
 				//array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
 			),
@@ -102,7 +138,12 @@
 		)); ?><!-- breadcrumbs-content -->
 	<?php endif?>
 	</div><!-- breadcrumbs -->
+<<<<<<< HEAD
 
+=======
+	<?php //echo Yii::app()->user->id." | ".Yii::app()->user->name."<br>"; ?>
+	<?php //echo Yii::app()->user->isGuest." | ".$userMgtStatus."<br>"; ?>
+>>>>>>> iter1
 	<?php echo $content; ?>
 
 	<div class="clear"></div>
