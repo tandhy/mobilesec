@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost/" />
+<title>admin-createUsers</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">admin-createUsers</td></tr>
+</thead><tbody>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=User Mgt</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Create Login</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=Login_email</td>
+	<td>mail@tandhy.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=Login_password</td>
+	<td>tandhy</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=Login_verifyPassword</td>
+	<td>tandhy</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=Login_fName</td>
+	<td>Tandhy</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=Login_mName</td>
+	<td>B</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=Login_fName</td>
+	<td>Tandhy</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=Login_lName</td>
+	<td>Parlindungan</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=Login_institution</td>
+	<td>Boston University Metropolitan College</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=Login_area</td>
+	<td>Security</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=Login_phone</td>
+	<td>6177631324</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=Login_mobile</td>
+	<td>6177631324</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=Login_role</td>
+	<td>user</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=Login_regDate</td>
+	<td>2013-10-18</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=Login_accStatus</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=Login_lastLogin</td>
+	<td>2013-10-18</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=yt0</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>
