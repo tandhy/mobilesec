@@ -2,7 +2,7 @@
 /* @var $this PaperController */
 /* @var $model Paper */
 
-$this->breadcrumbs=array(
+/*$this->breadcrumbs=array(
 	'Papers'=>array('index'),
 	$model->title=>array('view','id'=>$model->id),
 	'Update',
@@ -13,7 +13,7 @@ $this->menu=array(
 	array('label'=>'Create Paper', 'url'=>array('create')),
 	array('label'=>'View Paper', 'url'=>array('view', 'id'=>$model->id)),
 	array('label'=>'Manage Paper', 'url'=>array('admin')),
-);
+);*/
 ?>
 
 <h1>Update Paper <?php echo $model->id; ?></h1>

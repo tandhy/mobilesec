@@ -21,7 +21,6 @@
 class Login extends CActiveRecord
 {
 	public $verifyPassword; // holds for comparing with password
-	public $verifyCode; // holds for captcha
 
 	/**
 	 * @return string the associated database table name
@@ -145,7 +144,22 @@ class Login extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
-<<<<<<< HEAD
+
+	/*
+	 * Retrieve list of Users where account Status is 0
+	 * @author tandhy
+	 */
+	public function getDeactivateUsers()
+	{
+		$criteria=new CDbCriteria;
+
+		$criteria->compare('accStatus','2', true);
+		$criteria->compare('role','user',true);
+
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+		));
+	}
 
 	/*
 	 * Retrieve list of Approved Users only -> accStatus = 1
@@ -162,8 +176,6 @@ class Login extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
-=======
->>>>>>> iter1
 
 	/**
 	 * Returns the static model of the specified AR class.
@@ -178,7 +190,6 @@ class Login extends CActiveRecord
 	
 	public function beforeSave()
 	{
-<<<<<<< HEAD
 		if($this->isNewRecord)
 		{
 			$this->regDate = date("Y-m-d");
@@ -190,17 +201,6 @@ class Login extends CActiveRecord
 			$pass = md5($this->password);
 			$this->password = $pass;
 		}
-=======
-		//if
-		$this->regDate = date("Y-m-d");
-		$this->lastLogin = date("Y-m-d");
-		$this->accStatus = 0;
-		$this->role = "user";
-		
-		// hash password with md5
-		$pass = md5($this->password);
-		$this->password = $pass;
->>>>>>> iter1
 		return true;
 	}
 	
@@ -219,15 +219,9 @@ class Login extends CActiveRecord
 			Institution : ".$this->institution."<br>
 			Area of Interest : ".$this->area."<br><br>
 			
-<<<<<<< HEAD
 			Please take a moment to approve.<br><br>
 			
 			------<br>
-=======
-			Please take a moment to approve.
-			
-			------
->>>>>>> iter1
 			This email is auto-generated when a user register in the web.
 			
 		";
@@ -239,7 +233,6 @@ class Login extends CActiveRecord
 		Yii::app()->mail->send($message);
 	}
 	
-<<<<<<< HEAD
 	/*
 	 * Function to send email notification to admin, after save model return true
 	 * @author tandhy
@@ -282,11 +275,41 @@ class Login extends CActiveRecord
 		$message->addTo($userRegistered->email);
 		$message->from = Yii::app()->params['adminEmail'];
 		Yii::app()->mail->send($message);
-=======
-	public function afterSave()
-	{
-		$this->sendRegistrationNotificationToAdmin();
->>>>>>> iter1
 		return true;
+	}	
+	
+	/*
+	 * Function to send email notification to user, after admin approve the user
+	 * @author tandhy
+	 */
+	public function getNewUserNumber()
+	{		
+		$criteria = new CDbCriteria;
+		
+		$criteria->select = 'email';
+		$criteria->condition = 'accStatus = 0';
+		$arrResult = Login::model()->count($criteria);
+		
+		return $arrResult;
+	}	
+	
+	/**
+	 * Get First Name and Last Name from Login by email
+	 * author : tandhy
+	 * date : 11.09.2013
+	 */
+	public function getFNameLNameByEmail($emailId)
+	{
+		$criteria = new CDbCriteria;
+		
+		$criteria->select = "fName,lName";
+		$criteria->condition = "email = :emailId";
+		$criteria->params = array(':emailId' => $emailId);
+		$arrResult = Login::model()->find($criteria);
+		if(empty($arrResult['lName']))
+			return $arrResult['fName'];
+		else
+			return $arrResult['lName'].", ".$arrResult['fName'];
+			
 	}
 }

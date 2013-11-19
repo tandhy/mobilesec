@@ -13,9 +13,14 @@ $this->pageTitle=Yii::app()->name . ' - Tools';
  <tr>
   <td><strong><?php echo CHtml::link('Paper Portal',array('paper/index')); ?></strong></td>
  </tr>
+<?php if(Yii::app()->user->isGuest){
+?>
  <tr>
-  <td>&nbsp;</td>
+  <td>You are required to <strong>Login</strong> in order to use this tool. If you not a user, please Register <?php echo CHtml::link('here',array('site/register'));?>.</td>
  </tr>
+<?php
+}
+?>
  <tr>
   <td>&nbsp;</td>
  </tr>

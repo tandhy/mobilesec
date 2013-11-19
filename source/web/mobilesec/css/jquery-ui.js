@@ -14657,8 +14657,8 @@ $.widget( "ui.tooltip", {
 		// Disabled elements have inconsistent behavior across browsers (#8661)
 		items: "[title]:not([disabled])",
 		position: {
-			my: "right top-35",
-			at: "left-20 bottom",
+			my: "left top+15",
+			at: "left bottom",
 			collision: "flipfit flip"
 		},
 		show: true,

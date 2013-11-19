@@ -7,10 +7,10 @@ $this->breadcrumbs=array(
 	'Create',
 );
 
-$this->menu=array(
+/*$this->menu=array(
 	array('label'=>'List ReviewPaper', 'url'=>array('index')),
 	array('label'=>'Manage ReviewPaper', 'url'=>array('admin')),
-);
+);*/
 ?>
 
 <h1>Create ReviewPaper</h1>

@@ -17,8 +17,7 @@
 		));
 		$this->endWidget();
 		
-		
-		if(!Yii::app()->user->isGuest) $this->widget('RightSideMenu');
+		$this->widget('RightSideMenu');
 	?>
 	</div><!-- sidebar -->
 </div>

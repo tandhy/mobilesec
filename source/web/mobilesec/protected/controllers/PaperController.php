@@ -32,12 +32,12 @@ class PaperController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','search','searchAll','viewPDF'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete','update'),
-				'users'=>array('admin'),
+				'actions'=>array('admin','delete'),
+				'users'=>array('administrator'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -51,8 +51,39 @@ class PaperController extends Controller
 	 */
 	public function actionView($id)
 	{
+		// create model for review Paper
+		$modelReviewPaper=new ReviewPaper;
+
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+
+		if(isset($_POST['cmdEditReviewPaper']) && isset($_POST['txtIdReviewPaper']))
+		{
+			Yii::app()->user->setState('reviewPaperHist',$_POST);//saving all the get parameters into session.
+
+			$this->redirect(array('reviewPaper/update','id'=>$_POST['txtIdReviewPaper']));
+		}
+
+
+		if(isset($_POST['ReviewPaper']))
+		{
+			$modelReviewPaper->attributes=$_POST['ReviewPaper'];
+			$modelReviewPaper->id = ReviewPaper::model()->createIdReviewPaper();
+			$modelReviewPaper->idPaper = $id;
+			$modelReviewPaper->createdBy = Yii::app()->user->id;
+			$modelReviewPaper->createdDate = date("Y-m-d");
+			if($modelReviewPaper->save())
+				$this->redirect(array('paper/view','id'=>$id));
+
+		}
+
+
+		// select only review Paper with paperId
+		$dataProvider=new ReviewPaper('getReviewPaperByIdPaper');
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
+			'modelReviewPaper'=>$modelReviewPaper, // model for ReviewPaper
+			'dataProvider'=>$dataProvider->getReviewPaperByIdPaper($id),
 		));
 	}
 
@@ -70,8 +101,26 @@ class PaperController extends Controller
 		if(isset($_POST['Paper']))
 		{
 			$model->attributes=$_POST['Paper'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			$model->tempFileUpload=CUploadedFile::getInstance($model,'tempFileUpload');
+
+			if(isset($model->fileName) && !empty($model->fileName))
+			{
+				$paperUploadName = Yii::app()->params['paperUploadPath'].'/'.$model->fileName.'.pdf';
+				$model->fileUrl = $model->fileName.'.pdf';
+
+			}
+			else
+			{
+				$paperUploadName = Yii::app()->params['paperUploadPath'].'/'.$model->tempFileUpload->Name;
+				$model->fileUrl = $model->tempFileUpload->Name;
+			}
+			
+			if($model->save() && $model->tempFileUpload->saveAs($paperUploadName))
+			{
+				//Yii::log('filename to be saved : '.$paperUploadName,'vardump','PaperController');
+				; // save the file to upload folder
+				$this->redirect(array('paper/search'));
+			}
 		}
 
 		$this->render('create',array(
@@ -122,7 +171,11 @@ class PaperController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Paper');
+		$dataProvider=new CActiveDataProvider('Paper',array(
+		    'criteria'=>array(
+				'order'=>'createdDate ASC',
+				)
+		));
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -138,7 +191,43 @@ class PaperController extends Controller
 		if(isset($_GET['Paper']))
 			$model->attributes=$_GET['Paper'];
 
-		$this->render('admin',array(
+		$this->render('searchPaper',array(
+			'model'=>$model,
+		));
+	}
+
+	/**
+	 * Handle user request for Paper searh
+	 */
+	public function actionSearch()
+	{
+		$model=new Paper('searchPaper');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Paper']))
+		{
+			$model->attributes=$_GET['Paper'];
+			Yii::app()->user->setState('paperHist',$_GET);//saving all the get parameters into session.
+		}
+
+
+		$this->render('searchPaper',array(
+			'model'=>$model,
+		));
+	}
+
+	/**
+	 * Handle user request for All Paper search
+	 */
+	public function actionSearchAll()
+	{
+		$model=new Paper('searchAllPaper');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Paper']))
+			$model->attributes=$_GET['Paper'];
+
+		Yii::app()->user->setState('paperHist',$_GET);//saving all the get parameters into session.
+
+		$this->render('searchAllPaper',array(
 			'model'=>$model,
 		));
 	}
@@ -168,6 +257,29 @@ class PaperController extends Controller
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
+		}
+	}
+	
+	/**
+	 * open pdf in new page
+	 * @param $id holds idPaper
+	 * author : tandhy
+	 * date : 11.14.13
+	 */
+	public function actionViewPDF($id)
+	{
+		// open new file 
+		$this->layout = 'viewpdf';
+		if(isset($id) && !empty($id))
+		{
+			$model = $this->loadModel($id);
+			$this->render('viewPDF',array(
+				'model'=>$model,
+			));
+		}
+		else
+		{
+			$this->redirect(array('view','id'=>$model->id));
 		}
 	}
 }

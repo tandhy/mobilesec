@@ -5,12 +5,8 @@
 
 <div class="view">
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('fileName')); ?>:</b>
-	<?php echo CHtml::encode($data->fileName); ?>
+	<b><?php //echo CHtml::encode($data->getAttributeLabel('id')); ?></b>
+	<?php //echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('title')); ?>:</b>
@@ -33,6 +29,10 @@
 	<?php echo CHtml::encode($data->abstract); ?>
 	<br />
 
+	<b><?php //echo CHtml::encode($data->getAttributeLabel('fileName')); ?></b>
+	<?php //echo CHtml::encode($data->fileName); ?>
+	<br />
+
 	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('idCat')); ?>:</b>
 	<?php echo CHtml::encode($data->idCat); ?>
@@ -50,7 +50,7 @@
 	<?php echo CHtml::encode($data->createdBy); ?>
 	<br />
 
-	<b><?php echo CHtml::encode($data->getAttributeLabel('createDate')); ?>:</b>
+	<b><?php echo CHtml::encode($data->getAttributeLabel('createdDate')); ?>:</b>
 	<?php echo CHtml::encode($data->createDate); ?>
 	<br />
 

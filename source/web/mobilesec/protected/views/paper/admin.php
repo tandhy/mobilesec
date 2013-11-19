@@ -2,15 +2,15 @@
 /* @var $this PaperController */
 /* @var $model Paper */
 
-$this->breadcrumbs=array(
+/*$this->breadcrumbs=array(
 	'Papers'=>array('index'),
 	'Manage',
-);
+);*/
 
-$this->menu=array(
+/*$this->menu=array(
 	array('label'=>'List Paper', 'url'=>array('index')),
 	array('label'=>'Create Paper', 'url'=>array('create')),
-);
+);*/
 
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){

@@ -42,23 +42,34 @@ class SiteController extends Controller
 		// collect user input data
 		if(isset($_POST['LoginForm']))
 		{
-<<<<<<< HEAD
-			$model->attributes=$_POST['LoginForm'];
-			// validate user input and redirect to the previous page if valid
-			if($model->validate() && $model->authenticate())
-			{
-				//echo "validate and authenticate<br>";
-				//$this->render('index');
-				$this->redirect(Yii::app()->user->returnUrl);
-			}
-				
-=======
-			/*echo "<script language=javascript>alert('".$model->username."');</script>";*/
 			$model->attributes=$_POST['LoginForm'];
 			// validate user input and redirect to the previous page if valid
 			if($model->validate() && $model->login())
-				$this->redirect(Yii::app()->user->returnUrl);
->>>>>>> iter1
+			{
+				//Yii::log("actionIndex | validate and login return true", 'vardump', 'SiteController');
+
+				$identity = new UserIdentity($model->username, $model->password);
+				if($identity->authenticate()) {
+					yii::app()->user->login($identity);				
+					//$this->layout = 'column2';
+					$this->redirect(array('login/index'));
+				}
+			}
+			else
+			{
+				/*Yii::log('ErrorCode = '.$model->errorCode,'vardump','SiteController-93');
+				if($model->errorCode==12)
+				{
+					Yii::app()->user->setFlash('validationError', "Sorry, but your is not approved yet. Please contact Administrator.");
+				}
+				else
+				{	
+					Yii::app()->user->setFlash('validationError', "Incorrect username or password");
+				}
+				*/
+				//Yii::log("actionIndex | validate and login return false", 'vardump', 'SiteController');
+			}
+				
 		}
 	}	
 
@@ -69,11 +80,8 @@ class SiteController extends Controller
 	public function actionIndex()
 	{
 		$model=new LoginForm;
-<<<<<<< HEAD
 		//$this->layout = 'column2';
 		if(!Yii::app()->user->isGuest) $this->layout = 'column2';
-=======
->>>>>>> iter1
 
 		// if it is ajax validation request
 		if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
@@ -171,7 +179,7 @@ class SiteController extends Controller
 	 */
 	public function actionLogin()
 	{
-		$model=new LoginForm;
+		/*$model=new LoginForm;
 
 		// if it is ajax validation request
 		if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
@@ -187,16 +195,14 @@ class SiteController extends Controller
 			// validate user input and redirect to the previous page if valid
 			if($model->validate() && $model->login())
 			{
-<<<<<<< HEAD
-				$this->render('index');
+				$this->render('login/index');
 				//$this->redirect(Yii::app()->user->returnUrl);
-=======
-				$this->redirect(Yii::app()->user->returnUrl);
->>>>>>> iter1
 			}
 		}
 		// display the login form
-		$this->render('login',array('model'=>$model));
+		//$this->render('login',array('model'=>$model));
+		*/
+		$this->processLoginForm();
 	}
 
 	/**
@@ -220,7 +226,6 @@ class SiteController extends Controller
 	 	//$this->layout = 'column2';
 		// set the public layout in component/controller.php
 		$this->render('publications');
-<<<<<<< HEAD
 	 }
 
 	/**
@@ -234,8 +239,6 @@ class SiteController extends Controller
 	 	$this->processLoginForm();
 		//$this->layout = 'column1';
 		 $this->render('people');
-=======
->>>>>>> iter1
 	 }
 
 	/**
@@ -299,15 +302,7 @@ class SiteController extends Controller
 			// assign regDate and lastLogin to current Date
 			//$model = new Login;
 			$model->attributes=$_POST['Login'];
-<<<<<<< HEAD
 			/*echo "<script language=javascript>alert('".$msg."');</script>";*/
-=======
-			/*$msg = $model->email." | ".$model->fName." | ".$model->mName." | ".$model->lName." | ";
-			$msg.= $model->institution." | ".$model->area." | ".$model->phone." | ".$model->mobile." | ";
-			$msg.= $model->password." | ".$model->role." | ".$model->regDate." | ".$model->lastLogin." | ";
-			$msg.= $model->accStatus;
-			echo "<script language=javascript>alert('".$msg."');</script>";*/
->>>>>>> iter1
 			if($model->save())
 			{
 				/*echo "<script language=javascript>alert('Saved');</script>";*/
@@ -324,8 +319,8 @@ class SiteController extends Controller
 		$this->processLoginForm();
 		if(Yii::app()->user->isGuest) 
 		{
-			//$model = new Login;
-			//$model->unsetAttributes();
+			$model = new Login;
+			$model->unsetAttributes();
 			$this->render('register', array('model'=>$model));
 			/*if($resetForm==1)
 			{

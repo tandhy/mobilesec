@@ -36,91 +36,59 @@ $( document ).tooltip();
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'email'); ?>
-		<?php echo $form->textField($model,'email',array('title'=>'Example : johndoe@bu.edu', 'placeholder'=>'Input your Email address')); ?>
+		<?php echo $form->emailField($model,'email',array('title'=>'Example : johndoe@bu.edu', 'placeholder'=>'Input your Email address*','class'=>'registerStyle')); ?>
 		<?php echo $form->error($model,'email'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'password'); ?>
-		<?php echo $form->passwordField($model,'password',array('title'=>'6-20 character','placeholder'=>'Input your Password')); ?>
-		<?php echo $form->error($model,'password'); ?>
+		<?php echo $form->passwordField($model,'password',array('title'=>'6-20 character','placeholder'=>'Input your Password*. contain mininum 6 char','class'=>'registerStyle-password')); ?>&nbsp;<?php echo $form->passwordField($model,'verifyPassword',array('title'=>'type the same as in password','placeholder'=>'Input your password again','class'=>'registerStyle-verpassword')); ?>
+		<?php echo $form->error($model,'password'); ?><?php echo $form->error($model,'verifyPassword'); ?>
+    </div>
+
+	<div class="row">
+		<?php echo $form->textField($model,'fName',array('size'=>'30','placeholder'=>'Input your First name*','class'=>'registerStyle-fName')); ?>&nbsp;<?php echo $form->textField($model,'mName',array('size'=>'10','placeholder'=>'Middle name','class'=>'registerStyle-mName')); ?>&nbsp;<?php echo $form->textField($model,'lName',array('size'=>'40','placeholder'=>'Input your Last name*','class'=>'registerStyle-lName')); ?>
+		<?php echo $form->error($model,'fName'); ?>&nbsp;<?php echo $form->error($model,'mName'); ?>&nbsp;<?php echo $form->error($model,'lName'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'verifyPassword'); ?>
-		<?php echo $form->passwordField($model,'verifyPassword',array('title'=>'type the same as in password','placeholder'=>'Input your password again')); ?>
-		<?php echo $form->error($model,'verifyPassword'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'fName'); ?>
-		<?php echo $form->textField($model,'fName',array('size'=>'40','placeholder'=>'Input your First name')); ?>
-		<?php echo $form->error($model,'fName'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'mName'); ?>
-		<?php echo $form->textField($model,'mName',array('size'=>'40','placeholder'=>'Middle name')); ?>
-		<?php echo $form->error($model,'mName'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'lName'); ?>
-		<?php echo $form->textField($model,'lName',array('size'=>'40','placeholder'=>'Input your Last name')); ?>
-		<?php echo $form->error($model,'lName'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'institution'); ?>
-		<?php echo $form->textField($model,'institution',array('size'=>'40', 'placeholder'=>'Input your Institution/Company/College')); ?>
+		<?php echo $form->textField($model,'institution',array('size'=>'40', 'placeholder'=>'Input your Institution/Company/College*','class'=>'registerStyle')); ?>
 		<?php echo $form->error($model,'institution'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'area'); ?>
-		<?php echo $form->textField($model,'area',array('size'=>'40','placeholder'=>'Input your Area of interest')); ?>
+		<?php echo $form->textField($model,'area',array('size'=>'40','placeholder'=>'Input your Area of interest*','class'=>'registerStyle')); ?>
 		<?php echo $form->error($model,'area'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'phone');
-			//echo CHtml::label('Phone (xxx) xxx-xxxx','fmtphone'); ?>
-		<?php echo $form->textField($model,'phone',array('size'=>'20','placeholder'=>'Input your Phone number')); ?>
-		<?php echo $form->error($model,'phone'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'mobile'); 
-			//echo CHtml::label('Mobile (xxx) xxx-xxxx','fmtmobile'); ?>
-		<?php echo $form->textField($model,'mobile',array('size'=>'20','placeholder'=>'Input your Mobile number')); ?>
-		<?php echo $form->error($model,'mobile'); ?>
+		<?php echo $form->textField($model,'phone',array('size'=>'20','placeholder'=>'Input your Phone number','class'=>'registerStyle-phone')); ?>&nbsp;<?php echo $form->textField($model,'mobile',array('size'=>'20','placeholder'=>'Input your Mobile number*','class'=>'registerStyle-mobile')); ?>
+		<?php echo $form->error($model,'phone'); ?>&nbsp;<?php echo $form->error($model,'mobile'); ?>
 	</div>
 
 <!-- hide the following data : start -->
 
 	<div class="row" style="visibility:visible">
-		<?php echo $form->labelEx($model,'role'); ?>
-		<?php echo $form->textField($model,'role'); ?>
-		<?php echo $form->error($model,'role'); ?>
+		<?php //echo $form->labelEx($model,'role'); ?>
+		<?php //echo $form->textField($model,'role'); ?>
+		<?php //echo $form->error($model,'role'); ?>
 	</div>
 
 	<div class="row" style="visibility:visible">
-		<?php echo $form->labelEx($model,'regDate'); ?>
-		<?php echo $form->textField($model,'regDate'); ?>
-		<?php echo $form->error($model,'regDate'); ?>
+		<?php //echo $form->labelEx($model,'regDate'); ?>
+		<?php //echo $form->textField($model,'regDate'); ?>
+		<?php //echo $form->error($model,'regDate'); ?>
 	</div>
 
 	<div class="row" style="visibility:visible">
-		<?php echo $form->labelEx($model,'lastLogin'); ?>
-		<?php echo $form->textField($model,'lastLogin'); ?>
-		<?php echo $form->error($model,'lastLogin'); ?>
+		<?php //echo $form->labelEx($model,'lastLogin'); ?>
+		<?php //echo $form->textField($model,'lastLogin'); ?>
+		<?php //echo $form->error($model,'lastLogin'); ?>
 	</div>
 
 	<div class="row" style="visibility:visible">
-		<?php echo $form->labelEx($model,'accStatus'); ?>
-		<?php echo $form->textField($model,'accStatus'); ?>
-		<?php echo $form->error($model,'accStatus'); ?>
+		<?php //echo $form->labelEx($model,'accStatus'); ?>
+		<?php //echo $form->textField($model,'accStatus'); ?>
+		<?php //echo $form->error($model,'accStatus'); ?>
 	</div>
 
 <!-- hide the following data : end -->

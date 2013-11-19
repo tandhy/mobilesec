@@ -57,8 +57,8 @@ return array(
 		'db'=>array(
 			'connectionString' => 'mysql:host=localhost;dbname=mobilesecurity',
 			'emulatePrepare' => true,
-			'username' => 'root',
-			'password' => 'root',
+			'username' => 'mobilesecurity',
+			'password' => 'mobsec.123',
 			'charset' => 'utf8',
 			'enableProfiling'=>true,
 			'enableParamLogging'=>true,
@@ -73,19 +73,15 @@ return array(
 			'routes'=>array(
 				array(
 					'class'=>'CFileLogRoute',
-<<<<<<< HEAD
-					//'levels'=>'error, warning, trace, info, vardump',
-					'levels'=>'info,vardump',
-=======
-					'levels'=>'error, warning, trace, info',
->>>>>>> iter1
+					'levels'=>'error, warning, trace, info, vardump',
+					//'levels'=>'info,vardump',
 				),
 				// uncomment the following to show log messages on web pages
 				
 				/*array(
 					'class'=>'CWebLogRoute',
 					'levels'=>'error, warning, trace, info',
-				),
+				),CDbLogRoute
 				array(
 					'class'=>'CProfileLogRoute',
 					'levels'=>'profile',
@@ -112,5 +108,6 @@ return array(
 	'params'=>array(
 		// this is used in contact page
 		'adminEmail'=>'tandhy@bu.edu',
+		'paperUploadPath'=>dirname(__FILE__).'/../../paperUpload',
 	),
 );

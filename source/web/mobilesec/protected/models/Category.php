@@ -7,12 +7,9 @@
  * @property integer $idCategory
  * @property string $Category
  * @property string $Description
-<<<<<<< HEAD
  *
  * The followings are the available model relations:
  * @property Paper[] $papers
-=======
->>>>>>> iter1
  */
 class Category extends CActiveRecord
 {
@@ -34,12 +31,7 @@ class Category extends CActiveRecord
 		return array(
 			array('idCategory, Category, Description', 'required'),
 			array('idCategory', 'numerical', 'integerOnly'=>true),
-<<<<<<< HEAD
 			array('Category, Description', 'length', 'max'=>255),
-=======
-			array('Category', 'length', 'max'=>50),
-			array('Description', 'length', 'max'=>255),
->>>>>>> iter1
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('idCategory, Category, Description', 'safe', 'on'=>'search'),
@@ -54,10 +46,7 @@ class Category extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-<<<<<<< HEAD
 			'papers' => array(self::HAS_MANY, 'Paper', 'idCat'),
-=======
->>>>>>> iter1
 		);
 	}
 
@@ -110,23 +99,37 @@ class Category extends CActiveRecord
 	{
 		return parent::model($className);
 	}
-<<<<<<< HEAD
 
 	/*
-	*	get all category from DB, and passed it to combobox
+	*	get all category from DB, idCategory and Category
 	*
 	*/
 	public function getCategoryList()
 	{
 		$criteria=new CDbCriteria;
 		$criteria->select='idCategory,Category';  // only select the 'idCategory' and 'Category' columns      
-		$arrResult = Category::model()->findAll($criteria);       
+		$arrResult = Category::model()->findAll($criteria);  
+		$result[0]='Select a Category';     
 		foreach($arrResult as $dataCategory)
 		{
 			$result[$dataCategory->idCategory] = $dataCategory->Category;
 		}
 		return $result;
 	}
-=======
->>>>>>> iter1
+	
+	/**
+	 * get Category Name from Category Id
+	 * Atuhor : Tandhy
+	 * Date : 11.08.13
+	 */
+	public function getCategoryNameFromId($id)
+	{
+		$criteria = new CDbCriteria;
+		$criteria->select = 'Category';
+		$criteria->condition = 'idCategory = :idCat';
+		$criteria->params = array(':idCat' => $id);
+		$arrResult = Category::model()->find($criteria);
+		return $arrResult['Category'];
+	}
+
 }

@@ -7,7 +7,7 @@ $this->pageTitle=Yii::app()->name;
 
 <table width="100%" border="0" cellspacing="1" cellpadding="0">
  <tr>
-  <td colspan="2"><strong>Faculty :</strong></td>
+  <td colspan="2"><h2>Faculty</h2></td>
  </tr>
  <tr>
   <td width="160" valign="top"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/ZHANG.png" width="155" height="210" /></td>
@@ -41,7 +41,7 @@ $this->pageTitle=Yii::app()->name;
   <td>&nbsp;</td>
  </tr>
  <tr>
-  <td colspan="2"><strong>External Collaborator :</strong></td>
+  <td colspan="2"><h2>External Collaborator</h2></td>
  </tr>
  <tr>
   <td colspan="2">Alper Ozbilen, Ph.D</td>
@@ -57,7 +57,7 @@ $this->pageTitle=Yii::app()->name;
   <td>&nbsp;</td>
  </tr>
  <tr>
-  <td colspan="2"><strong>Current Students :</strong></td>
+  <td colspan="2"><h2>Current Students</h2></td>
  </tr>
  <tr>
   <td colspan="2">Tandhy Bintang Parlindungan Simanjuntak</td>
@@ -70,7 +70,7 @@ $this->pageTitle=Yii::app()->name;
   <td>&nbsp;</td>
  </tr>
  <tr>
-  <td colspan="2"><strong>Former Master Students :</strong></td>
+  <td colspan="2"><h2>Former Master Students</h2></td>
  </tr>
  <tr>
   <td colspan="2">Felix Rohrer (Currently at Reflexion Networks, Inc http://www.reflexion.net/)</td>
@@ -93,5 +93,3 @@ $this->pageTitle=Yii::app()->name;
   <td>&nbsp;</td>
  </tr>
 </table>
-<p>survey of the organizations with 500 more employees by Gartner Inc, 90% of enterprises have already deployed mobile devices, with smartphones being most widely deployed. BYOD (bring your own device) is an inevitable trend but also top concern for enterprises security. As the new favorite target to attackers, mobile devices become a very vulnerable point to security threats because of its immaturity. As the most popular mobile platform, the open platform Android  accounts for 79% of all smartphone shipped in the second quarter of 2013 based on the reports by Garnter an IDC. It also attracted most attention from attackers because of its popularity and openness.</p>
-<p>The MobSec Lab studies how the mobile security (particular android security) can be enhanced through preventing, avoiding and detecting the threats from both platform and application levels. Our current interests include Role-Based Access Control on Android, Android application analysis, and NFC related security problems. The mobile security lab supports both education and research in mobile security by engaging the faculty and students in the research projects and by provision of educational and research resources.</p>

@@ -28,7 +28,7 @@
 
 	<div class="row">
 		<?php echo $form->label($model,'author'); ?>
-		<?php echo $form->textField($model,'author',array('size'=>60,'maxlength'=>255)); ?>
+		<?php echo $form->textArea($model,'author',array('rows'=>6, 'cols'=>50)); ?>
 	</div>
 
 	<div class="row">
@@ -67,8 +67,8 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'createDate'); ?>
-		<?php echo $form->textField($model,'createDate'); ?>
+		<?php echo $form->label($model,'createdDate'); ?>
+		<?php echo $form->textField($model,'createdDate'); ?>
 	</div>
 
 	<div class="row buttons">

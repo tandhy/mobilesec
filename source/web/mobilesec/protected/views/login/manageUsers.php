@@ -2,14 +2,46 @@
 /* @var $this LoginController */
 /* @var $dataProvider CActiveDataProvider */
 
-$this->breadcrumbs=array(
+/*$this->breadcrumbs=array(
 	'Users',
-);
+);*/
+
+Yii::app()->clientScript->registerScript('search', "
+$('#accordionUser').click(function(){
+	$('.search-form').toggle();
+	return false;
+});
+$('.search-form form').submit(function(){
+	$('#login-grid').yiiGridView('update', {
+		data: $(this).serialize()
+	});
+	return false;
+});
+");
 
 ?>
+<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/jquery-ui.css" />
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/css/jquery-1.9.1.js"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/css/jquery-ui.js"></script>
+<link rel="stylesheet" href="/resources/demos/style.css" />
+<script>
+$(function() {
+	$( "#accordionUser" ).accordion({
+		active: false,
+		collapsible: true,
+		heightStyle: "content",
+		icons: { "header": "ui-icon-circle-triangle-e" },
+		event: "click"
+	});
+});
+</script>
+<style media="screen" type="text/css">
+.ui-widget{
+	font-size:0.8em;
+}
+</style>
 
 <h2>Registered Users</h2>
-
 <?php /*$this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,
 	'itemView'=>'_view',
@@ -39,12 +71,16 @@ $this->breadcrumbs=array(
 	),
 ));*/ ?>
 
-<?php //echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
- <div class="search-form" style="display:none">
-<?php $this->renderPartial('_manageUsers',array(
-	'data'=>$data,
-)); ?>
-</div><!-- search-form -->
+<div id="accordionUser">
+<h3><b>Advanced Search</b></h3>
+    <div>
+        <div class="search-form" style="display:none;background:#FFFFFF">
+        <?php $this->renderPartial('_searchUsers',array(
+            'data'=>$data,
+        )); ?>
+		</div><!-- search-form -->
+    </div>
+</div>
 
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'login-grid',

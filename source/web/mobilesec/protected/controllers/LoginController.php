@@ -31,23 +31,13 @@ class LoginController extends Controller
 				'actions'=>array('index','view'),
 				'users'=>array('*'),
 			),*/
-<<<<<<< HEAD
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
 				'actions'=>array('index','update'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('manage','index','view','update','approve','logout','approveUser','deactivateUser','manage'),
+				'actions'=>array('manage','index','view','update','approve','logout','approveUser','deactivateUser','manage','deactivate'),
 				'users'=>array('administrator','tandhy@bu.edu'),
-=======
-			/*array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
-				'users'=>array('@'),
-			),*/
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete','index','view','create','update','approve'),
-				'users'=>array('admin'),
->>>>>>> iter1
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -79,7 +69,6 @@ class LoginController extends Controller
 
 		if(isset($_POST['Login']))
 		{
-<<<<<<< HEAD
 			/*$model->attributes=$_POST['Login'];
 			$model->regDate = date("Y-m-d");
 			$model->lastLogin = date("Y-m-d");
@@ -90,9 +79,6 @@ class LoginController extends Controller
 			$pass = md5($this->password);
 			$model->password = $pass;
 			*/
-=======
-			$model->attributes=$_POST['Login'];
->>>>>>> iter1
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->email));
 		}
@@ -145,7 +131,6 @@ class LoginController extends Controller
 	 */
 	public function actionIndex()
 	{
-<<<<<<< HEAD
 		/*$dataProvider=new CActiveDataProvider('Login');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
@@ -154,6 +139,7 @@ class LoginController extends Controller
 		$data->unsetAttributes();  // clear any default values
 		$this->render('index',array(
 			'data'=>$data,
+			'newUserMember'=>Login::model()->getNewUserNumber(),
 		));
 	}
 
@@ -170,11 +156,6 @@ class LoginController extends Controller
 		$data->unsetAttributes();  // clear any default values
 		$this->render('manageUsers',array(
 			'data'=>$data,
-=======
-		$dataProvider=new CActiveDataProvider('Login');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
->>>>>>> iter1
 		));
 	}
 
@@ -198,15 +179,22 @@ class LoginController extends Controller
 	 * @param check the accStatus, if 0 = not been approved
 	 * @author tandhy / 10.18.13
 	 */
-<<<<<<< HEAD
 	public function actionapproveUser($id)
 	{
-		if(Login::model()->updateByPk($id,array('accStatus'=>1)) ==1)
-		{
-			// send notification to user
-			Login::model()->sendApprovalNotificationToUser($this->loadModel($id));
-		}
+		$userAcc=Login::model()->findByAttributes(array('email'=>$id));
 		
+		if($userAcc->accStatus==0)
+		{
+			if(Login::model()->updateByPk($id,array('accStatus'=>1)) == 1)
+			{
+				// send notification to user
+				Login::model()->sendApprovalNotificationToUser($this->loadModel($id));
+			}
+		}
+		else
+		{
+			Login::model()->updateByPk($id,array('accStatus'=>1));
+		}
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
@@ -220,7 +208,7 @@ class LoginController extends Controller
 	 */
 	public function actiondeactivateUser($id)
 	{
-		if(Login::model()->updateByPk($id,array('accStatus'=>0)) == 1 )
+		if(Login::model()->updateByPk($id,array('accStatus'=>2)) == 1 )
 		{
 			// send notification to user that the account is deactivate
 			//Login::model()->sendApprovalNotificationToUser($this->loadModel($id));
@@ -229,7 +217,7 @@ class LoginController extends Controller
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('index'));
+			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('manage'));
 	}	
 	
 	/*
@@ -237,8 +225,6 @@ class LoginController extends Controller
 	 * @param check the accStatus, if 0 = not been approved
 	 * @author tandhy / 10.18.13
 	 */
-=======
->>>>>>> iter1
 	public function actionApprove()
 	{
 		$model=new Login('getNewUsers');
@@ -247,6 +233,23 @@ class LoginController extends Controller
 			$model->attributes=$_GET['Login'];
 
 		$this->render('approveUsers',array(
+			'model'=>$model,
+		));
+	}
+
+	/*
+	 * Render view of member which has not been approved.
+	 * @param check the accStatus, if 0 = not been approved
+	 * @author tandhy / 10.18.13
+	 */
+	public function actionDeactivate()
+	{
+		$model=new Login('getDeactivateUsers');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Login']))
+			$model->attributes=$_GET['Login'];
+
+		$this->render('deactivateUsers',array(
 			'model'=>$model,
 		));
 	}
@@ -265,5 +268,5 @@ class LoginController extends Controller
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
 	}
-
+	
 }

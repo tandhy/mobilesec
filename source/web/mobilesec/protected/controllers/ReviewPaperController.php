@@ -37,7 +37,7 @@ class ReviewPaperController extends Controller
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
+				'users'=>array('admin','administrator'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -95,7 +95,7 @@ class ReviewPaperController extends Controller
 		{
 			$model->attributes=$_POST['ReviewPaper'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('paper/view','id'=>$model->idPaper));
 		}
 
 		$this->render('update',array(

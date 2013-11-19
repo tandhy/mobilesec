@@ -2,19 +2,11 @@
 /* @var $this LoginController */
 /* @var $model Login */
 
-$this->breadcrumbs=array(
+/*$this->breadcrumbs=array(
 	'Users'=>array('index'),
 	'Approve Users',
-);
+);*/
 
-<<<<<<< HEAD
-=======
-$this->menu=array(
-	array('label'=>'List Users', 'url'=>array('index')),
-	array('label'=>'Create Users', 'url'=>array('create')),
-);
-
->>>>>>> iter1
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
 	$('.search-form').toggle();
@@ -29,7 +21,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Approve New Users</h1>
+<h1>New Users Registration</h1>
 
 <?php //echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
  <div class="search-form" style="display:none">
@@ -41,14 +33,11 @@ $('.search-form form').submit(function(){
 <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'login-grid',
 	'dataProvider'=>$model->getNewUsers(),
+	'emptyText'=>'No New User Registration.',
 	'filter'=>$model,
 	'columns'=>array(
 		'email',
 		'fName',
-<<<<<<< HEAD
-=======
-		'mName',
->>>>>>> iter1
 		'lName',
 		'institution',
 		/*'accStatus',
@@ -62,7 +51,6 @@ $('.search-form form').submit(function(){
 		*/
 		array(
 			'class'=>'CButtonColumn',
-<<<<<<< HEAD
 			'template'=>'{view} {approve}',
 			'buttons'=>array(
 				'approve'=> array(
@@ -79,8 +67,6 @@ $('.search-form form').submit(function(){
 					//'url'=>Yii::app()->createUrl('/faq/index/', array('email' => $model->email)),
 				),
 			),
-=======
->>>>>>> iter1
 		),
 	),
 )); ?>
